@@ -2,8 +2,26 @@ name: Sync CourtReserve Schedule
 
 on:
   schedule:
+    # 15-minute baseline around the clock
     - cron: '*/15 * * * *'
+
+    # Burst 1: 5:20 PM - 6:30 PM EDT (21:20 - 22:30 UTC)
+    - cron: '20-55/5 21 * * *'
+    - cron: '0-30/5 22 * * *'
+
+    # Burst 2: 7:20 PM - 8:30 PM EDT (23:20 - 00:30 UTC)
+    - cron: '20-55/5 23 * * *'
+    - cron: '0-30/5 0 * * *'
+
+    # Burst 3: 9:20 PM - 10:30 PM EDT (01:20 - 02:30 UTC)
+    - cron: '20-55/5 1 * * *'
+    - cron: '0-30/5 2 * * *'
+
   workflow_dispatch:
+
+concurrency:
+  group: sync-courtreserve
+  cancel-in-progress: false
 
 jobs:
   sync-schedule:
@@ -36,7 +54,16 @@ jobs:
           EVENT_URL="https://api.courtreserve.com/api/v1/eventregistrationreport/listactive?eventDateFrom=${FROM_UTC}&eventDateTo=${TO_UTC}&includeCourts=true&includePartnerInfo=true&includeGuests=true"
           curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$EVENT_URL" -o data/events.json
 
-          # 3. Process with exact Swagger fields
+      - name: Debug Raw Attendee Record
+        run: |
+          echo "=== SEARCHING FOR WILL K IN RAW EVENTS DATA ==="
+          jq '.. | select(.MemberName? == "Will K" or .FirstName? == "Will" or .LastName? == "K")' data/events.json || true
+          echo "==============================================="
+
+      - name: Process Schedule JSON
+        run: |
+          TODAY_NY=$(TZ="America/New_York" date +%Y-%m-%d)
+
           jq -n \
             --slurpfile res data/reservations.json \
             --slurpfile ev data/events.json \
@@ -72,7 +99,18 @@ jobs:
                     else "" end
                   ),
                   checkedIn: (
-                    if .IsCheckedIn == true or .AttendanceStatus == 1 or .AttendanceStatus == "CheckedIn" or .CheckedIn == true then
+                    if (
+                      .IsCheckedIn == true or 
+                      .CheckedIn == true or 
+                      .HasCheckedIn == true or
+                      .AttendanceStatus == 1 or 
+                      .AttendanceStatus == "1" or
+                      .AttendanceStatus == "CheckedIn" or 
+                      .AttendanceStatus == "Attended" or 
+                      .AttendanceStatus == "Present" or
+                      (.CheckInDateTime != null and .CheckInDateTime != "") or
+                      (.CheckInDate != null and .CheckInDate != "")
+                    ) then
                       true
                     else
                       false
@@ -89,5 +127,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "Auto-update CourtReserve schedule (NY Time) [skip ci]"
-          git push origin main
+          if git diff --staged --quiet; then
+            echo "No schedule changes detected."
+          else
+            git commit -m "Auto-update CourtReserve schedule (NY Time) [skip ci]"
+            git pull --rebase
+            git push origin main
+          fi
