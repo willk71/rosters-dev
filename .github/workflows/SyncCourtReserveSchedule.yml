@@ -30,7 +30,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch Reservations and Events
+      - name: Fetch Reservations, Events, and Check-Ins
         env:
           CR_USER: ${{ secrets.CR_USERNAME }}
           CR_PASS: ${{ secrets.CR_PASSWORD }}
@@ -51,14 +51,12 @@ jobs:
           curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$RES_URL" -o data/reservations.json
 
           # 2. Fetch Events & Registrations
-          EVENT_URL="https://api.courtreserve.com/api/v1/eventregistrationreport/listactive?eventDateFrom=${FROM_UTC}&eventDateTo=${TO_UTC}&includeCourts=true&includePartnerInfo=true&includeGuests=true&includeCheckInInfo=true&includeAttendance=true"
+          EVENT_URL="https://api.courtreserve.com/api/v1/eventregistrationreport/listactive?eventDateFrom=${FROM_UTC}&eventDateTo=${TO_UTC}&includeCourts=true&includePartnerInfo=true&includeGuests=true"
           curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$EVENT_URL" -o data/events.json
 
-      - name: Debug Raw Attendee Record
-        run: |
-          echo "=== SEARCHING FOR WILL K IN RAW EVENTS DATA ==="
-          jq '.. | select(.MemberName? == "Will K" or .FirstName? == "Will" or .LastName? == "Kang")' data/events.json || true
-          echo "==============================================="
+          # 3. Fetch Check-In Attendance Report
+          CHECKIN_URL="https://api.courtreserve.com/api/v1/attendancereport/checkin?checkInStartDate=${TODAY_NY}&includeCourtBooking=true&includeEvents=true"
+          curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$CHECKIN_URL" -o data/checkins.json
 
       - name: Process Schedule JSON
         run: |
@@ -67,6 +65,7 @@ jobs:
           jq -n \
             --slurpfile res data/reservations.json \
             --slurpfile ev data/events.json \
+            --slurpfile chk data/checkins.json \
             '{
               lastUpdated: (now | todate),
               date: "'"$TODAY_NY"'",
@@ -84,43 +83,40 @@ jobs:
                   endTime: .EndTime
                 }
               ],
-              events: [
-                ($ev[0].Data // $ev[0] // [])[] | select(.IsPublic != false and .IsHidden != true) | {
-                  eventId: .EventId,
-                  title: (.DivisionName // .EventName // "Event"),
-                  startTime: .StartTime,
-                  endTime: .EndTime,
-                  courts: (if .Courts then [(.Courts[]?.CourtName // .Courts[]? // empty)] else [] end),
-                  playerName: (
-                    if .FirstName then
-                      ((.FirstName | split(" ")[0]) + (if .LastName then " " + (.LastName[0:1]) else "" end))
-                    elif .MemberName then
-                      ((.MemberName | split(" ")[0]) + " " + ((.MemberName | split(" ")[1] // "")[0:1]))
-                    else "" end
-                  ),
-                  checkedIn: (
-                    if (
-                      .IsCheckedIn == true or 
-                      .CheckedIn == true or 
-                      .HasCheckedIn == true or
-                      .AttendanceStatus == 1 or 
-                      .AttendanceStatus == "1" or
-                      .AttendanceStatus == "CheckedIn" or 
-                      .AttendanceStatus == "Attended" or 
-                      .AttendanceStatus == "Present" or
-                      (.CheckInDateTime != null and .CheckInDateTime != "") or
-                      (.CheckInDate != null and .CheckInDate != "")
-                    ) then
-                      true
-                    else
-                      false
-                    end
-                  )
-                }
-              ]
+              events: (
+                # Build lookup index of checked-in attendees by ID and Full Name
+                (($chk[0].Data // $chk[0] // []) | map(
+                  select(.CheckInStatusName == "Checked-in" or .CheckinDateTime != null) |
+                  [
+                    (if .OrganizationMemberId then (.OrganizationMemberId | tostring) else empty end),
+                    (((.MemberFirstName // "") + " " + (.MemberLastName // "")) | ascii_downcase | trim)
+                  ]
+                ) | flatten | unique) as $checkedInKeys |
+
+                [
+                  ($ev[0].Data // $ev[0] // [])[] | select(.IsPublic != false and .IsHidden != true) | {
+                    eventId: .EventId,
+                    title: (.DivisionName // .EventName // "Event"),
+                    startTime: .StartTime,
+                    endTime: .EndTime,
+                    courts: (if .Courts then [(.Courts[]?.CourtName // .Courts[]? // empty)] else [] end),
+                    playerName: (
+                      if .FirstName then
+                        ((.FirstName | split(" ")[0]) + (if .LastName then " " + (.LastName[0:1]) else "" end))
+                      elif .MemberName then
+                        ((.MemberName | split(" ")[0]) + " " + ((.MemberName | split(" ")[1] // "")[0:1]))
+                      else "" end
+                    ),
+                    checkedIn: (
+                      (if .OrganizationMemberId then ($checkedInKeys | index((.OrganizationMemberId | tostring)) != null) else false end) or
+                      (if .FirstName and .LastName then ($checkedInKeys | index((((.FirstName // "") + " " + (.LastName // "")) | ascii_downcase | trim)) != null) else false end)
+                    )
+                  }
+                ]
+              )
             }' > data/schedule.json
 
-          rm -f data/reservations.json data/events.json
+          rm -f data/reservations.json data/events.json data/checkins.json
 
       - name: Commit and Push Updated Data
         run: |
