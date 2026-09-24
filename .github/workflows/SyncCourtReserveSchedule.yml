@@ -84,14 +84,13 @@ jobs:
                 }
               ],
               events: (
-                # Build lookup index of checked-in attendees by ID and Full Name
-                (($chk[0].Data // $chk[0] // []) | map(
-                  select(.CheckInStatusName == "Checked-in" or .CheckinDateTime != null) |
-                  [
-                    (if .OrganizationMemberId then (.OrganizationMemberId | tostring) else empty end),
-                    (((.MemberFirstName // "") + " " + (.MemberLastName // "")) | ascii_downcase | trim)
-                  ]
-                ) | flatten | unique) as $checkedInKeys |
+                # Build dictionary lookup: { "id:10616870": true, "name:clara ma": true }
+                (($chk[0].Data // $chk[0] // []) | reduce .[] as $item ({};
+                  if ($item.CheckInStatusName == "Checked-in" or ($item.CheckinDateTime != null and $item.CheckinDateTime != "")) then
+                    (if $item.OrganizationMemberId then .["id:" + ($item.OrganizationMemberId | tostring)] = true else . end) |
+                    (if $item.MemberFirstName and $item.MemberLastName then .["name:" + (($item.MemberFirstName + " " + $item.MemberLastName) | ascii_downcase)] = true else . end)
+                  else . end
+                )) as $checkedMap |
 
                 [
                   ($ev[0].Data // $ev[0] // [])[] | select(.IsPublic != false and .IsHidden != true) | {
@@ -108,8 +107,8 @@ jobs:
                       else "" end
                     ),
                     checkedIn: (
-                      (if .OrganizationMemberId then ($checkedInKeys | index((.OrganizationMemberId | tostring)) != null) else false end) or
-                      (if .FirstName and .LastName then ($checkedInKeys | index((((.FirstName // "") + " " + (.LastName // "")) | ascii_downcase | trim)) != null) else false end)
+                      ($checkedMap["id:" + (.OrganizationMemberId | tostring)] // false) or
+                      ($checkedMap["name:" + (((.FirstName // "") + " " + (.LastName // "")) | ascii_downcase)] // false)
                     )
                   }
                 ]
