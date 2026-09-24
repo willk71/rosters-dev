@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Welcome to IPX! &ndash; Live Session Rosters</title>
+  <title>Welcome to IPX! &ndash; Rosters</title>
   <style>
     :root {
       --bg-gradient: radial-gradient(circle at 50% 0%, #1c1c1e 0%, #121214 65%, #000000 100%);
@@ -344,16 +344,22 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    function formatTime(isoString) {
+    function formatTime(isoString, isEndTime = false) {
       if (!isoString) return '';
       const d = new Date(isoString);
+
+      // Override late-night CourtReserve truncations (23:59 -> 1:00 AM)
+      if (isEndTime && d.getHours() === 23 && d.getMinutes() === 59) {
+        return '1:00 AM';
+      }
+
       return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
     }
 
     function formatTimeWindow(startIso, endIso) {
       if (!startIso || !endIso) return '';
-      const t1 = formatTime(startIso);
-      const t2 = formatTime(endIso);
+      const t1 = formatTime(startIso, false);
+      const t2 = formatTime(endIso, true);
       const parts1 = t1.split(' ');
       const parts2 = t2.split(' ');
       if (parts1.length === 2 && parts2.length === 2 && parts1[1] === parts2[1]) {
@@ -415,7 +421,13 @@
         const isRunningAtTarget = (startIso, endIso) => {
           if (!startIso || !endIso) return false;
           const s = new Date(startIso);
-          const e = new Date(endIso);
+          let e = new Date(endIso);
+
+          // If the session was truncated to 23:59:00, extend target window coverage through 1:00 AM
+          if (e.getHours() === 23 && e.getMinutes() === 59) {
+            e = new Date(e.getTime() + 61 * 60 * 1000);
+          }
+
           return s <= targetTime && e > targetTime;
         };
 
@@ -613,8 +625,12 @@
         }
 
         sessions.forEach(item => {
-          const s = new Date(item.startTime);
-          const e = new Date(item.endTime);
+          let s = new Date(item.startTime);
+          let e = new Date(item.endTime);
+          if (e.getHours() === 23 && e.getMinutes() === 59) {
+            e = new Date(e.getTime() + 61 * 60 * 1000);
+          }
+
           const isNow = now >= s && now <= e;
           const count = item.players.length;
 
