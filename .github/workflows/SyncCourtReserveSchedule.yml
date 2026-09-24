@@ -48,15 +48,16 @@ jobs:
 
           # 1. Fetch Reservations
           RES_URL="https://api.courtreserve.com/api/v1/reservationreport/listactive?reservationsFromDate=${FROM_UTC}&reservationsToDate=${TO_UTC}"
-          curl -f -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$RES_URL" -o data/reservations.json
+          curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$RES_URL" -o data/reservations.json
 
           # 2. Fetch Events & Registrations
-          EVENT_URL="https://api.courtreserve.com/api/v1/eventregistrationreport/listactive?eventDateFrom=${FROM_UTC}&eventDateTo=${TO_UTC}&includeCourts=true&includePartnerInfo=true&includeGuests=true&includeCheckInInfo=true&includeAttendance=true"          curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$EVENT_URL" -o data/events.json
+          EVENT_URL="https://api.courtreserve.com/api/v1/eventregistrationreport/listactive?eventDateFrom=${FROM_UTC}&eventDateTo=${TO_UTC}&includeCourts=true&includePartnerInfo=true&includeGuests=true&includeCheckInInfo=true&includeAttendance=true"
+          curl -s -H "Authorization: $AUTH_HEADER" -H "Accept: application/json" "$EVENT_URL" -o data/events.json
 
       - name: Debug Raw Attendee Record
         run: |
           echo "=== SEARCHING FOR WILL K IN RAW EVENTS DATA ==="
-          jq '.. | select(.MemberName? == "Will K" or .FirstName? == "Will" or .LastName? == "K")' data/events.json || true
+          jq '.. | select(.MemberName? == "Will K" or .FirstName? == "Will" or .LastName? == "Kang")' data/events.json || true
           echo "==============================================="
 
       - name: Process Schedule JSON
