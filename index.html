@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Welcome to IPX! &ndash; Court Schedule</title>
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 50% 0%, #1c1c1e 0%, #121214 65%, #000000 100%);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.10);
+      --card-border-active: rgba(255, 214, 10, 0.55);
+
+      --yellow: #ffd60a;
+      --silver: #8e8e93;
+      --silver-border: rgba(255, 255, 255, 0.35);
+      --text-main: #ffffff;
+      --text-sub: #ebebf5;
+      --text-muted: #8e8e93;
+
+      --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-stack) !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 2.2vh 3vw 1.5vh 3vw;
+      position: relative;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1.2vh;
+      flex-shrink: 0;
+      gap: 2vw;
+    }
+
+    .header-left {
+      min-width: 0;
+      flex: 1;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .header-left h1 {
+      font-size: clamp(2rem, 3vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .header-separator {
+      margin: 0 0.55em;
+      color: var(--text-muted);
+      font-weight: 300;
+      opacity: 0.7;
+    }
+
+    .header-window {
+      color: var(--yellow);
+      font-weight: 600;
+      margin-left: 0.4em;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: baseline;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .clock {
+      font-size: clamp(2.4rem, 3.5vw, 4rem);
+      font-weight: 300;
+      color: var(--yellow);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8vh;
+      margin-top: 2.2vh;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    main#schedule-container {
+      flex: 1;
+      display: grid;
+      gap: 2vh 2vw;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    main.count-1 { grid-template-columns: 1fr; }
+    main.count-2 { grid-template-columns: 1fr 1fr; }
+    main.count-3, main.count-4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+    main.count-5, main.count-6 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 1.4vh 2vw; }
+
+    .session-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 14px solid var(--yellow);
+      border-radius: 20px;
+      padding: 3.5vh 3vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.2vh;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    main.count-5 .session-card,
+    main.count-6 .session-card {
+      padding: 2vh 2.2vw;
+      gap: 0.6vh;
+      border-left-width: 10px;
+      border-radius: 16px;
+    }
+
+    .line-title {
+      font-size: clamp(2.4rem, 3.4vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    main.count-5 .line-title,
+    main.count-6 .line-title {
+      font-size: clamp(1.8rem, 2.4vw, 3.2rem);
+    }
+
+    .line-courts {
+      font-size: clamp(1.8rem, 2.6vw, 3.2rem);
+      font-weight: 600;
+      color: var(--yellow);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    main.count-5 .line-courts,
+    main.count-6 .line-courts {
+      font-size: clamp(1.4rem, 1.9vw, 2.4rem);
+    }
+
+    .privates-container {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-left: 10px solid var(--silver-border);
+      border-radius: 16px;
+      padding: 1.6vh 2vw;
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      flex-shrink: 0;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .privates-title {
+      font-size: clamp(1.1rem, 1.4vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      white-space: nowrap;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+      padding-right: 1.5vw;
+    }
+
+    .privates-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1vh 2vw;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .private-item {
+      font-size: clamp(1.2rem, 1.6vw, 2rem);
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    .private-item .holder {
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-left: 0.25em;
+    }
+
+    .no-sessions {
+      grid-column: 1 / -1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      text-align: center;
+      padding: 6vh;
+    }
+
+    .no-sessions h2 {
+      font-size: clamp(2rem, 3vw, 3.4rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text-sub);
+    }
+
+    footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.2rem;
+      padding-top: 0.8vh;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: rgba(255, 255, 255, 0.35);
+      font-variant-numeric: tabular-nums;
+    }
+
+    footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1 id="header-title">
+        <span>Welcome to IPX!</span><span class="header-separator">&ndash;</span><span id="board-subtitle">Schedule</span>
+      </h1>
+    </div>
+    <div class="header-right">
+      <div class="clock" id="live-clock">--:-- --</div>
+    </div>
+  </header>
+
+  <div class="content-area">
+    <main id="schedule-container">
+      <div class="no-sessions">
+        <h2>Loading Schedule...</h2>
+      </div>
+    </main>
+
+    <div id="privates-box" class="privates-container" style="display: none;">
+      <div class="privates-title">Private Reservations</div>
+      <div id="privates-list" class="privates-list"></div>
+    </div>
+  </div>
+
+  <footer>
+    <span id="target-mode-pill">Target: --</span>
+    <span>&bull;</span>
+    <span id="data-refresh-time">Data Sync: --</span>
+    <span>&bull;</span>
+    <span id="page-refresh-time">Display Updated: --</span>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const lookaheadMinutes = parseInt(urlParams.get('ahead') || '0', 10);
+
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('live-clock').textContent = now.toLocaleTimeString([], {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function formatTime(isoString) {
+      if (!isoString) return '';
+      const d = new Date(isoString);
+      return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
+    }
+
+    function formatTimeWindow(startIso, endIso) {
+      if (!startIso || !endIso) return '';
+      const t1 = formatTime(startIso);
+      const t2 = formatTime(endIso);
+      const parts1 = t1.split(' ');
+      const parts2 = t2.split(' ');
+      if (parts1.length === 2 && parts2.length === 2 && parts1[1] === parts2[1]) {
+        return `${parts1[0]} \u2013 ${t2}`;
+      }
+      return `${t1} \u2013 ${t2}`;
+    }
+
+    function isEventSpace(rawName) {
+      if (!rawName) return false;
+      const str = (typeof rawName === 'object' && rawName.CourtName) ? rawName.CourtName : String(rawName);
+      return /event\s*space/i.test(str);
+    }
+
+    function cleanCourtName(rawName) {
+      if (!rawName) return '';
+      return String(rawName)
+        .replace(/\s*\(\s*Livestreaming\s*\)/gi, '')
+        .replace(/\s*\(\s*Streaming\s*\)/gi, '')
+        .replace(/^Court\s*/i, '')
+        .trim();
+    }
+
+    function toSentenceCase(str) {
+      if (!str) return '';
+      return String(str).replace(/([^\W_]+[^\s-]*) */g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }).trim();
+    }
+
+    function cleanTitle(rawTitle) {
+      if (!rawTitle) return '';
+      let firstSegment = String(rawTitle).split('|')[0].trim();
+      firstSegment = firstSegment
+        .replace(/\bSessions?\b/gi, '')
+        .replace(/\bOpen\s*Play\b/gi, '')
+        .replace(/\bPrime\s*Time\b/gi, '');
+
+      firstSegment = firstSegment.replace(/[-–—/,\s]+$/, '').trim();
+      firstSegment = firstSegment.replace(/(\d+(?:\.\d+)?)\s*[-–—]\s*(\d+(?:\.\d+)?)/g, '$1 \u2013 $2');
+      let cleaned = toSentenceCase(firstSegment);
+
+      cleaned = cleaned
+        .replace(/\bAdvanced\s+Beginner\b/gi, 'AdvBeg')
+        .replace(/\bIntermediate\b/gi, 'Int')
+        .replace(/\bAdvanced\b/gi, 'Adv');
+
+      return cleaned;
+    }
+
+    async function refreshDisplay() {
+      try {
+        const res = await fetch(`data/schedule.json?_t=${Date.now()}`);
+        if (!res.ok) throw new Error("Schedule file not found");
+        const data = await res.json();
+
+        const now = new Date();
+        document.getElementById('page-refresh-time').textContent = `Display: ${now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true })}`;
+        
+        if (data.lastUpdated) {
+          const syncDate = new Date(data.lastUpdated);
+          document.getElementById('data-refresh-time').textContent = `Data Sync: ${syncDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })}`;
+        }
+
+        const targetTime = new Date(now.getTime() + lookaheadMinutes * 60 * 1000);
+        const targetTimeString = targetTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
+
+        document.getElementById('target-mode-pill').textContent = lookaheadMinutes !== 0 
+          ? `Target: ${targetTimeString}` 
+          : 'Target: Now';
+
+        const isRunningAtTarget = (startIso, endIso) => {
+          if (!startIso || !endIso) return false;
+          const s = new Date(startIso);
+          const e = new Date(endIso);
+          return s <= targetTime && e > targetTime;
+        };
+
+        const sessions = [];
+        const privates = [];
+
+        // 1. Group Scheduled Events (excluding Event Space)
+        const eventMap = {};
+        (data.events || []).forEach(e => {
+          if (!isRunningAtTarget(e.startTime, e.endTime)) return;
+
+          let courtsRaw = e.courts || e.Courts || [];
+          if (!Array.isArray(courtsRaw)) courtsRaw = [courtsRaw];
+
+          // Exclude event if assigned to Event Space
+          if (courtsRaw.some(isEventSpace)) return;
+
+          const courtNumbers = courtsRaw
+            .map(c => cleanCourtName(c && c.CourtName ? c.CourtName : c))
+            .filter(Boolean)
+            .sort((a, b) => (parseInt(a) || a) - (parseInt(b) || b));
+
+          const key = `${e.eventId || e.EventId}_${e.startTime || e.StartTime}`;
+
+          if (!eventMap[key]) {
+            eventMap[key] = {
+              type: 'event',
+              title: cleanTitle(e.title || e.DivisionName || e.EventName || 'Event'),
+              startTime: e.startTime || e.StartTime,
+              endTime: e.endTime || e.EndTime,
+              courts: new Set(courtNumbers)
+            };
+          } else {
+            courtNumbers.forEach(c => eventMap[key].courts.add(c));
+          }
+        });
+
+        Object.values(eventMap).forEach(ev => {
+          const arr = Array.from(ev.courts);
+          sessions.push({
+            type: 'event',
+            title: ev.title,
+            courtsLabel: arr.length > 0 ? `on ${arr.join(', ')}` : 'on TBD',
+            startTime: ev.startTime,
+            endTime: ev.endTime
+          });
+        });
+
+        // 2. Separate Private Reservations (excluding Event Space)
+        (data.reservations || []).forEach(r => {
+          if (!isRunningAtTarget(r.startTime, r.endTime)) return;
+
+          let rawCourt = r.court || r.Courts || r.CourtName || '';
+          if (Array.isArray(rawCourt)) {
+            if (rawCourt.some(isEventSpace)) return;
+            rawCourt = rawCourt.map(c => c && c.CourtName ? c.CourtName : c).join(', ');
+          } else if (isEventSpace(rawCourt)) {
+            return;
+          }
+
+          const courtClean = cleanCourtName(rawCourt);
+
+          let holder = '';
+          if (r.holderLabel && r.holderLabel.trim() !== '') {
+            holder = r.holderLabel.trim();
+            if (!holder.startsWith('(')) holder = `(${holder})`;
+          } else {
+            const f = r.MemberFirstName || r.FirstName || r.UserFirstName || '';
+            const l = r.MemberLastName || r.LastName || r.UserLastName || '';
+            if (f) {
+              holder = `(${toSentenceCase(f)} ${l ? l.charAt(0).toUpperCase() : ''})`.trim();
+            } else {
+              const rawName = r.MemberName || r.UserName || r.ReservedBy || '';
+              if (rawName) {
+                if (rawName.includes(',')) {
+                  const parts = rawName.split(',').map(s => s.trim());
+                  holder = `(${toSentenceCase(parts[1])} ${parts[0].charAt(0).toUpperCase()})`;
+                } else {
+                  const parts = rawName.trim().split(/\s+/);
+                  holder = parts.length > 1 ? `(${toSentenceCase(parts[0])} ${parts[parts.length - 1].charAt(0).toUpperCase()})` : `(${toSentenceCase(parts[0])})`;
+                }
+              }
+            }
+          }
+
+          privates.push({
+            court: courtClean || 'TBD',
+            holder: holder,
+            startTime: r.startTime || r.StartTime
+          });
+        });
+
+        privates.sort((a, b) => (parseInt(a.court) || 0) - (parseInt(b.court) || 0));
+
+        let bestWindowTag = '';
+        const allItems = [...sessions, ...privates];
+        if (allItems.length > 0) {
+          const windowCounts = {};
+          allItems.forEach(item => {
+            if (item.startTime && item.endTime) {
+              const w = formatTimeWindow(item.startTime, item.endTime);
+              windowCounts[w] = (windowCounts[w] || 0) + 1;
+            }
+          });
+          const keys = Object.keys(windowCounts);
+          if (keys.length > 0) {
+            const bestWindow = keys.reduce((a, b) => windowCounts[a] >= windowCounts[b] ? a : b);
+            bestWindowTag = `<span class="header-window">(${bestWindow})</span>`;
+          }
+        }
+
+        const subtitleText = lookaheadMinutes !== 0 
+          ? `Schedule (${targetTimeString} Preview)` 
+          : 'Schedule';
+
+        const titleEl = document.getElementById('header-title');
+        titleEl.innerHTML = `<span>Welcome to IPX!</span><span class="header-separator">&ndash;</span><span>${subtitleText}</span>${bestWindowTag}`;
+
+        const container = document.getElementById('schedule-container');
+        container.innerHTML = '';
+
+        if (sessions.length === 0 && privates.length === 0) {
+          container.className = '';
+          container.innerHTML = `
+            <div class="no-sessions">
+              <h2>No Scheduled Sessions (${targetTimeString})</h2>
+            </div>
+          `;
+          document.getElementById('privates-box').style.display = 'none';
+          return;
+        }
+
+        sessions.sort((a, b) => {
+          const keyA = (a.title || '').trim().substring(0, 3);
+          const keyB = (b.title || '').trim().substring(0, 3);
+          const numA = parseFloat(keyA);
+          const numB = parseFloat(keyB);
+
+          if (!isNaN(numA) && !isNaN(numB)) {
+            if (numA !== numB) return numA - numB;
+          } else {
+            const strComp = keyA.localeCompare(keyB, undefined, { numeric: true, sensitivity: 'base' });
+            if (strComp !== 0) return strComp;
+          }
+
+          return new Date(a.startTime) - new Date(b.startTime);
+        });
+
+        const totalSessions = Math.min(sessions.length, 6);
+        container.className = `count-${totalSessions}`;
+
+        sessions.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'session-card';
+
+          card.innerHTML = `
+            <div class="line-title">${item.title}</div>
+            <div class="line-courts">${item.courtsLabel}</div>
+          `;
+          container.appendChild(card);
+        });
+
+        const privatesBox = document.getElementById('privates-box');
+        const privatesList = document.getElementById('privates-list');
+
+        if (privates.length > 0) {
+          privatesBox.style.display = 'flex';
+          privatesList.innerHTML = privates.map(p => {
+            const holderSpan = p.holder ? `<span class="holder">${p.holder}</span>` : '';
+            return `<div class="private-item">Court ${p.court} ${holderSpan}</div>`;
+          }).join('');
+        } else {
+          privatesBox.style.display = 'none';
+        }
+
+      } catch (err) {
+        console.error("Error refreshing index display:", err);
+      }
+    }
+
+    refreshDisplay();
+    setInterval(refreshDisplay, 30000);
+  </script>
+</body>
+</html>
