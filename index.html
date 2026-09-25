@@ -262,11 +262,11 @@
       border: 1px solid var(--card-border);
       border-left: 14px solid var(--yellow);
       border-radius: 22px;
-      padding: 3vh 2.5vw;
+      padding: 3vh 3vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 1.8vh;
+      gap: 1.2vh;
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
@@ -278,26 +278,10 @@
       border-color: var(--card-border-active);
     }
 
-    /* Horizontal layout when 2 or 3 sessions are stacked in full rows */
     main.count-2 .session-card,
     main.count-3 .session-card {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2.5vh 3.5vw;
-      gap: 3vw;
-    }
-
-    main.count-2 .session-info,
-    main.count-3 .session-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    main.count-2 .session-courts-container,
-    main.count-3 .session-courts-container {
-      flex-shrink: 0;
-      text-align: right;
+      padding: 2.2vh 3.5vw;
+      gap: 0.8vh;
     }
 
     /* Scaled titles */
@@ -328,13 +312,16 @@
       font-size: clamp(2.4rem, 3.3vw, 4.2rem);
     }
 
-    /* Scaled courts */
+    /* Scaled courts on 2nd line */
     .session-courts {
       font-size: clamp(2.7rem, 3.9vw, 5.1rem);
       font-weight: 600;
       color: var(--yellow);
       letter-spacing: -0.01em;
       line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     main.count-1 .session-courts {
@@ -356,21 +343,44 @@
     footer {
       flex-shrink: 0;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
-      gap: 1.2rem;
       padding-top: 0.8vh;
       font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.01em;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.45);
       font-variant-numeric: tabular-nums;
     }
 
-    footer span {
+    .footer-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .footer-right span {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+    }
+
+    .countdown-label {
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+
+    .countdown-val {
+      font-weight: 700;
+      color: var(--yellow);
+      font-variant-numeric: tabular-nums;
+      font-size: 0.85rem;
     }
 
     .no-sessions {
@@ -413,13 +423,19 @@
   </main>
 
   <footer>
-    <span id="theme-pill">Theme: --</span>
-    <span>&bull;</span>
-    <span id="target-mode-pill">Target: --</span>
-    <span>&bull;</span>
-    <span id="data-refresh-time">Data Sync: --</span>
-    <span>&bull;</span>
-    <span id="page-refresh-time">Display Updated: --</span>
+    <div class="footer-left">
+      <span class="countdown-label">Current Sessions Ends/Next Sessions Starts:</span>
+      <span class="countdown-val" id="transition-countdown">--:--</span>
+    </div>
+    <div class="footer-right">
+      <span id="theme-pill">Theme: --</span>
+      <span>&bull;</span>
+      <span id="target-mode-pill">Target: --</span>
+      <span>&bull;</span>
+      <span id="data-refresh-time">Data Sync: --</span>
+      <span>&bull;</span>
+      <span id="page-refresh-time">Display Updated: --</span>
+    </div>
   </footer>
 
   <script>
@@ -431,6 +447,8 @@
     
     const isPreview = hasExplicitAhead && lookaheadMinutes !== 15;
 
+    let nextTransitionTargetEpoch = null;
+
     function updateClock() {
       const now = new Date();
       document.getElementById('live-clock').textContent = now.toLocaleTimeString([], {
@@ -438,9 +456,30 @@
         minute: '2-digit',
         hour12: true
       });
+      updateCountdown();
     }
     setInterval(updateClock, 1000);
     updateClock();
+
+    function updateCountdown() {
+      const countdownEl = document.getElementById('transition-countdown');
+      if (!nextTransitionTargetEpoch) {
+        countdownEl.textContent = '--:--';
+        return;
+      }
+
+      const diffMs = nextTransitionTargetEpoch - Date.now();
+
+      // Only show if transitioning within the 15-minute window (15 * 60 * 1000 = 900,000 ms)
+      if (diffMs > 0 && diffMs <= 15 * 60 * 1000) {
+        const totalSecs = Math.floor(diffMs / 1000);
+        const m = Math.floor(totalSecs / 60);
+        const s = totalSecs % 60;
+        countdownEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      } else {
+        countdownEl.textContent = '--:--';
+      }
+    }
 
     const themeDisplayNames = {
       'theme-tiffany': 'Tiffany',
@@ -600,6 +639,28 @@
         };
 
         const events = Array.isArray(data) ? data : (data.events || []);
+
+        // Find upcoming transition (start or end of sessions) for the countdown
+        let closestFutureEpoch = null;
+        events.forEach(e => {
+          const s = new Date(e.startTime || e.StartTime).getTime();
+          let endDt = new Date(e.endTime || e.EndTime);
+          if (endDt.getHours() === 23 && endDt.getMinutes() === 59) {
+            endDt = new Date(endDt.getTime() + 61 * 60 * 1000);
+          }
+          const endEpoch = endDt.getTime();
+
+          [s, endEpoch].forEach(epoch => {
+            if (epoch > now.getTime()) {
+              if (closestFutureEpoch === null || epoch < closestFutureEpoch) {
+                closestFutureEpoch = epoch;
+              }
+            }
+          });
+        });
+        nextTransitionTargetEpoch = closestFutureEpoch;
+        updateCountdown();
+
         const eventMap = {};
 
         events.forEach(e => {
@@ -628,7 +689,7 @@
         const sessions = [];
         Object.values(eventMap).forEach(ev => {
           const arr = Array.from(ev.courts);
-          const courtsLabel = arr.length > 0 ? `Courts ${arr.join(', ')}` : 'Courts TBD';
+          const courtsLabel = arr.length > 0 ? `on ${arr.join(' ')}` : 'on TBD';
 
           sessions.push({
             title: ev.title,
@@ -699,22 +760,10 @@
           const card = document.createElement('div');
           card.className = `session-card ${isNow ? 'is-now' : ''}`;
 
-          // Wide horizontal layout for 2 or 3 stacked sessions
-          if (totalSessions === 2 || totalSessions === 3) {
-            card.innerHTML = `
-              <div class="session-info">
-                <div class="session-title">${item.title}</div>
-              </div>
-              <div class="session-courts-container">
-                <div class="session-courts">${item.courtsLabel}</div>
-              </div>
-            `;
-          } else {
-            card.innerHTML = `
-              <div class="session-title">${item.title}</div>
-              <div class="session-courts">${item.courtsLabel}</div>
-            `;
-          }
+          card.innerHTML = `
+            <div class="session-title">${item.title}</div>
+            <div class="session-courts">${item.courtsLabel}</div>
+          `;
 
           container.appendChild(card);
         });
