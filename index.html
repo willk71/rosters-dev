@@ -7,6 +7,28 @@
   <title>Welcome to IPX! &ndash; Court Assignments</title>
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/index.css" />
+  <style>
+    .session-queue {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .session-queue .queue-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      opacity: 0.75;
+    }
+
+    .session-queue .queue-value {
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -233,6 +255,40 @@
       return toSentenceCase(firstSegment);
     }
 
+    function getQueueLocation(courts, title = '') {
+      if (!courts || courts.length === 0) return 'TBD';
+
+      // Normalize court numbers to integers
+      const nums = courts
+        .map(c => parseInt(c, 10))
+        .filter(n => !isNaN(n))
+        .sort((a, b) => a - b);
+
+      const t = title.toLowerCase();
+
+      // Explicit keyword checks first
+      if (t.includes('all level')) {
+        return 'Main Hub / Breezeway Entry';
+      }
+      if (t.includes('gated')) {
+        const minCourt = nums.length > 0 ? Math.min(...nums) : '';
+        return `Stanchion Rack outside Court ${minCourt} Entry`;
+      }
+
+      // Bank/cluster heuristics
+      if (nums.some(n => [1, 2, 4, 5].includes(n))) {
+        return 'Walkway Entry (Courts 2 & 4)';
+      }
+      if (nums.some(n => [7, 8].includes(n))) {
+        return 'Stanchion Post outside Court 7';
+      }
+      if (nums.some(n => [10, 11, 12].includes(n))) {
+        return 'Dividing Fence between Courts 10 & 11';
+      }
+
+      return `Entrance near Court ${nums[0]}`;
+    }
+
     async function refreshDisplay() {
       try {
         const res = await fetch(`data/schedule.json?_t=${Date.now()}`);
@@ -321,10 +377,12 @@
         Object.values(eventMap).forEach(ev => {
           const arr = Array.from(ev.courts);
           const courtsLabel = arr.length > 0 ? `on ${arr.join(' ')}` : 'on TBD';
+          const queueLocation = getQueueLocation(arr, ev.title);
 
           sessions.push({
             title: ev.title,
             courtsLabel: courtsLabel,
+            queueLocation: queueLocation,
             startTime: ev.startTime,
             endTime: ev.endTime
           });
@@ -394,6 +452,10 @@
           card.innerHTML = `
             <div class="session-title">${item.title}</div>
             <div class="session-courts">${item.courtsLabel}</div>
+            <div class="session-queue">
+              <span class="queue-label">Paddle Queue:</span>
+              <span class="queue-value">${item.queueLocation}</span>
+            </div>
           `;
 
           container.appendChild(card);
