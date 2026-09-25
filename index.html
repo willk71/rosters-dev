@@ -265,12 +265,17 @@
 
       const t = title.toLowerCase();
 
-      // 1. Social / Open Play override
-      if (t.includes('all level')) {
-        return 'Court 4 Table';
+      // 1. Explicit Rule: Any group including courts 7 and 8 stacks at Court 7
+      if (nums.includes(7) && nums.includes(8)) {
+        return 'Court 7 Paddle Rack';
       }
 
-      // 2. Far-side Back Row Constraint (Courts 3, 6, 9, 11)
+      // 2. Explicit Rule: Any group that includes 11 and 12 but not 7 stacks at Court 10 Right
+      if (nums.includes(11) && nums.includes(12) && !nums.includes(7)) {
+        return 'Court 10 Paddle Rack - Right';
+      }
+
+      // 3. Far-side Back Row Constraint (Courts 3, 6, 9, 11)
       // Only valid if ALL assigned courts are in the back row, and NOT 6 + 9
       const BACK_COURTS = new Set([3, 6, 9, 11]);
       const isAllBack = nums.every(n => BACK_COURTS.has(n));
@@ -285,29 +290,33 @@
         }
       }
 
-      // 3. Bank 10, 11, 12 (Front / Middle configurations)
+      // 4. Social / Open Play override
+      if (t.includes('all level')) {
+        return 'Court 4 Table';
+      }
+
+      // 5. Remaining Bank 10, 11, 12 configurations
       if (nums.some(n => [10, 11, 12].includes(n))) {
         if (nums.includes(12) && !nums.includes(10)) {
           return 'Court 12 Table';
         }
-        // Gated sessions on Court 10 route to Dedicated Left rack
         if (t.includes('gated')) {
           return 'Court 10 Paddle Rack - Left';
         }
         return 'Court 10 Paddle Rack - Right';
       }
 
-      // 4. Bank 7, 8, 9 (Courts 8 & 9 route to Court 7)
+      // 6. Remaining Bank 7, 8, 9 configurations (e.g., just Court 7 or 7+9)
       if (nums.some(n => [7, 8, 9].includes(n))) {
         return 'Court 7 Paddle Rack';
       }
 
-      // 5. Bank 4, 5, 6 (Courts 5 & 6 route to Court 4)
+      // 7. Bank 4, 5, 6 (Courts 5 & 6 route to Court 4)
       if (nums.some(n => [4, 5, 6].includes(n))) {
         return 'Court 4 Table';
       }
 
-      // 6. Bank 1, 2, 3 (Courts 2 & 3 route to Court 1)
+      // 8. Bank 1, 2, 3 (Courts 2 & 3 route to Court 1)
       if (nums.some(n => [1, 2, 3].includes(n))) {
         return 'Court 1 Paddle Rack';
       }
