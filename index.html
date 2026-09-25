@@ -239,9 +239,10 @@
       grid-template-rows: 1fr 1fr;
     }
 
-    /* 3 sessions: 3 columns */
+    /* 3 sessions: 3 stacked rows spanning full width */
     main.count-3 {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
     }
 
     /* 4 sessions: 2x2 grid */
@@ -277,26 +278,29 @@
       border-color: var(--card-border-active);
     }
 
-    /* Spacious 2-row layout */
-    main.count-2 .session-card {
+    /* Horizontal layout when 2 or 3 sessions are stacked in full rows */
+    main.count-2 .session-card,
+    main.count-3 .session-card {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 3.5vh 3.5vw;
+      padding: 2.5vh 3.5vw;
       gap: 3vw;
     }
 
-    main.count-2 .session-info {
+    main.count-2 .session-info,
+    main.count-3 .session-info {
       flex: 1;
       min-width: 0;
     }
 
-    main.count-2 .session-courts-container {
+    main.count-2 .session-courts-container,
+    main.count-3 .session-courts-container {
       flex-shrink: 0;
       text-align: right;
     }
 
-    /* 50% larger session titles across all card layouts */
+    /* Scaled titles */
     .session-title {
       font-size: clamp(3.0rem, 4.5vw, 6.0rem);
       font-weight: 700;
@@ -317,29 +321,14 @@
     }
 
     main.count-3 .session-title {
-      font-size: clamp(2.7rem, 3.6vw, 4.5rem);
+      font-size: clamp(2.8rem, 4.0vw, 5.2rem);
     }
 
     main.count-4 .session-title {
       font-size: clamp(2.4rem, 3.3vw, 4.2rem);
     }
 
-    .session-window {
-      font-size: clamp(1.2rem, 1.5vw, 1.9rem);
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-top: 0.6vh;
-    }
-
-    main.count-1 .session-window {
-      font-size: clamp(1.6rem, 2.2vw, 2.6rem);
-    }
-
-    main.count-2 .session-window {
-      font-size: clamp(1.45rem, 2.0vw, 2.4rem);
-    }
-
-    /* 50% larger court labels across all card layouts */
+    /* Scaled courts */
     .session-courts {
       font-size: clamp(2.7rem, 3.9vw, 5.1rem);
       font-weight: 600;
@@ -357,7 +346,7 @@
     }
 
     main.count-3 .session-courts {
-      font-size: clamp(2.25rem, 3.0vw, 3.9rem);
+      font-size: clamp(2.6rem, 3.8vw, 4.8rem);
     }
 
     main.count-4 .session-courts {
@@ -707,16 +696,14 @@
           }
 
           const isNow = now >= s && now <= e;
-          const sessionWindow = formatTimeWindow(item.startTime, item.endTime);
-
           const card = document.createElement('div');
           card.className = `session-card ${isNow ? 'is-now' : ''}`;
 
-          if (totalSessions === 2) {
+          // Wide horizontal layout for 2 or 3 stacked sessions
+          if (totalSessions === 2 || totalSessions === 3) {
             card.innerHTML = `
               <div class="session-info">
                 <div class="session-title">${item.title}</div>
-                <div class="session-window">${sessionWindow}</div>
               </div>
               <div class="session-courts-container">
                 <div class="session-courts">${item.courtsLabel}</div>
@@ -726,7 +713,6 @@
             card.innerHTML = `
               <div class="session-title">${item.title}</div>
               <div class="session-courts">${item.courtsLabel}</div>
-              <div class="session-window">${sessionWindow}</div>
             `;
           }
 
