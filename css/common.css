@@ -15,6 +15,10 @@
   --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 }
 
+/* ==========================================================================
+   1. CORE TIME-BASED THEMES
+   ========================================================================== */
+
 /* 1. Tiffany Morning: Petrol & Mint Frost (7:00 AM & 9:00 AM) */
 body.theme-tiffany {
   --bg-gradient: radial-gradient(circle at 50% 10%, #0d2826 0%, #061514 60%, #020707 100%);
@@ -100,6 +104,10 @@ body.theme-porsche .session-card,
 body.theme-porsche .roster-card {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(255, 159, 10, 0.08);
 }
+
+/* ==========================================================================
+   2. MOTORSPORT & ATHLETIC THEMES
+   ========================================================================== */
 
 /* 6. Roland-Garros: Paris Smoked Clay & Scorched Orange */
 body.theme-rolandgarros {
@@ -191,155 +199,6 @@ body.theme-masters .roster-card {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(245, 183, 0, 0.07);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-stack) !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background: var(--bg-gradient);
-  color: var(--text-main);
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 2.2vh 3vw 1.5vh 3vw;
-  position: relative;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1.2vh;
-  flex-shrink: 0;
-}
-
-.header-left {
-  min-width: 0;
-  flex: 1;
-  display: flex;
-  align-items: baseline;
-}
-
-.header-left h1 {
-  font-size: clamp(2rem, 3.2vw, 3.8rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-main);
-  line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  align-items: baseline;
-}
-
-.header-separator {
-  margin: 0 0.55em;
-  color: var(--text-muted);
-  font-weight: 300;
-  opacity: 0.7;
-}
-
-.header-window {
-  color: var(--yellow);
-  font-weight: 600;
-  margin-left: 0.4em;
-}
-
-footer {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding-top: 0.8vh;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.45);
-  font-variant-numeric: tabular-nums;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4vh;
-}
-
-.footer-meta-pills {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.footer-meta-pills span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.footer-right {
-  display: flex;
-  align-items: baseline;
-  gap: 2vw;
-  text-align: right;
-}
-
-.footer-countdown-container {
-  display: none;
-  align-items: baseline;
-  gap: 0.8rem;
-}
-
-.footer-countdown-container.is-active {
-  display: inline-flex;
-}
-
-.countdown-label {
-  font-size: clamp(1rem, 1.35vw, 1.6rem);
-  font-weight: 600;
-  color: var(--text-sub);
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-}
-
-.countdown-clock,
-.footer-clock {
-  font-size: clamp(2.4rem, 3.8vw, 4.4rem);
-  font-weight: 300;
-  color: var(--yellow);
-  letter-spacing: -0.03em;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
-.no-sessions {
-  grid-column: 1 / -1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  text-align: center;
-  padding: 6vh;
-}
-
-.no-sessions h2 {
-  font-size: clamp(1.8rem, 2.8vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--text-sub);
-}
 /* 11. Wimbledon All-England: Lawn Green & Violet */
 body.theme-wimbledon {
   --bg-gradient: radial-gradient(circle at 50% 10%, #0d2818 0%, #06170d 60%, #020804 100%);
@@ -518,4 +377,342 @@ body.theme-lakers .count-badge {
 body.theme-lakers .session-card,
 body.theme-lakers .roster-card {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 24px rgba(253, 185, 39, 0.08);
+}
+
+/* ==========================================================================
+   3. NYC METRO SPORTS THEMES
+   ========================================================================== */
+
+/* 21. New York Yankees: Midnight Navy & Diamond White */
+body.theme-yankees {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #0c1c33 0%, #060e1c 60%, #01040a 100%);
+  --yellow: #ffffff;
+  --card-bg: rgba(12, 28, 51, 0.75);
+  --card-border: rgba(255, 255, 255, 0.35);
+  --card-border-active: rgba(255, 255, 255, 0.95);
+}
+body.theme-yankees .count-badge {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+body.theme-yankees .session-card,
+body.theme-yankees .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 24px rgba(255, 255, 255, 0.06);
+}
+
+/* 22. New York Mets: Queens Royal Blue & Amazin' Orange */
+body.theme-mets {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #071f45 0%, #031026 60%, #01050f 100%);
+  --yellow: #ff5910;
+  --card-bg: rgba(7, 31, 69, 0.72);
+  --card-border: rgba(255, 89, 16, 0.38);
+  --card-border-active: rgba(255, 89, 16, 0.95);
+}
+body.theme-mets .count-badge {
+  background: rgba(255, 89, 16, 0.24);
+  border-color: #ff5910;
+  color: #ffffff;
+}
+body.theme-mets .session-card,
+body.theme-mets .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.68), inset 0 0 25px rgba(255, 89, 16, 0.08);
+}
+
+/* 23. New York Knicks: MSG Royal Blue & Orange */
+body.theme-knicks {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #082652 0%, #04142e 60%, #010612 100%);
+  --yellow: #ff7518;
+  --card-bg: rgba(8, 38, 82, 0.72);
+  --card-border: rgba(255, 117, 24, 0.38);
+  --card-border-active: rgba(255, 117, 24, 0.95);
+}
+body.theme-knicks .count-badge {
+  background: rgba(255, 117, 24, 0.24);
+  border-color: #ff7518;
+  color: #ffffff;
+}
+body.theme-knicks .session-card,
+body.theme-knicks .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(255, 117, 24, 0.08);
+}
+
+/* 24. Brooklyn Nets: Matte Black & Chalk White */
+body.theme-nets {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #1e1e22 0%, #0e0e11 60%, #030304 100%);
+  --yellow: #ffffff;
+  --card-bg: rgba(30, 30, 34, 0.85);
+  --card-border: rgba(255, 255, 255, 0.3);
+  --card-border-active: rgba(255, 255, 255, 0.95);
+}
+body.theme-nets .count-badge {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+body.theme-nets .session-card,
+body.theme-nets .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 24px rgba(255, 255, 255, 0.05);
+}
+
+/* 25. New York Liberty: Seafoam Mint & Obsidian */
+body.theme-liberty {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #092c26 0%, #041613 60%, #010706 100%);
+  --yellow: #5ee6c1;
+  --card-bg: rgba(9, 44, 38, 0.7);
+  --card-border: rgba(94, 230, 193, 0.35);
+  --card-border-active: rgba(94, 230, 193, 0.95);
+}
+body.theme-liberty .count-badge {
+  background: rgba(94, 230, 193, 0.22);
+  border-color: #5ee6c1;
+  color: #ffffff;
+}
+body.theme-liberty .session-card,
+body.theme-liberty .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(94, 230, 193, 0.08);
+}
+
+/* 26. New York Giants: Big Blue & Scarlet Red */
+body.theme-giants {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #0a1f4e 0%, #05102b 60%, #01050f 100%);
+  --yellow: #ff2a44;
+  --card-bg: rgba(10, 31, 78, 0.72);
+  --card-border: rgba(255, 42, 68, 0.38);
+  --card-border-active: rgba(255, 42, 68, 0.95);
+}
+body.theme-giants .count-badge {
+  background: rgba(255, 42, 68, 0.24);
+  border-color: #ff2a44;
+  color: #ffffff;
+}
+body.theme-giants .session-card,
+body.theme-giants .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 24px rgba(255, 42, 68, 0.08);
+}
+
+/* 27. New York Jets: Gotham Green & Spotlight White */
+body.theme-jets {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #0a3326 0%, #051a13 60%, #010806 100%);
+  --yellow: #50e386;
+  --card-bg: rgba(10, 51, 38, 0.7);
+  --card-border: rgba(80, 227, 134, 0.35);
+  --card-border-active: rgba(80, 227, 134, 0.95);
+}
+body.theme-jets .count-badge {
+  background: rgba(80, 227, 134, 0.22);
+  border-color: #50e386;
+  color: #ffffff;
+}
+body.theme-jets .session-card,
+body.theme-jets .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.68), inset 0 0 24px rgba(80, 227, 134, 0.08);
+}
+
+/* 28. New York Rangers: Broadway Blue & Shield Red */
+body.theme-rangers {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #08245b 0%, #041230 60%, #010614 100%);
+  --yellow: #ff334b;
+  --card-bg: rgba(8, 36, 91, 0.72);
+  --card-border: rgba(255, 51, 75, 0.38);
+  --card-border-active: rgba(255, 51, 75, 0.95);
+}
+body.theme-rangers .count-badge {
+  background: rgba(255, 51, 75, 0.24);
+  border-color: #ff334b;
+  color: #ffffff;
+}
+body.theme-rangers .session-card,
+body.theme-rangers .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(255, 51, 75, 0.08);
+}
+
+/* 29. New York Islanders: Deep Navy & Sunset Orange */
+body.theme-islanders {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #082a52 0%, #03152b 60%, #010712 100%);
+  --yellow: #ff7824;
+  --card-bg: rgba(8, 42, 82, 0.72);
+  --card-border: rgba(255, 120, 36, 0.38);
+  --card-border-active: rgba(255, 120, 36, 0.95);
+}
+body.theme-islanders .count-badge {
+  background: rgba(255, 120, 36, 0.24);
+  border-color: #ff7824;
+  color: #ffffff;
+}
+body.theme-islanders .session-card,
+body.theme-islanders .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.68), inset 0 0 24px rgba(255, 120, 36, 0.08);
+}
+
+/* 30. New York City FC: Sky Blue & Obsidian Navy */
+body.theme-nycfc {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #0a203b 0%, #040e1d 60%, #01040a 100%);
+  --yellow: #59beff;
+  --card-bg: rgba(10, 32, 59, 0.72);
+  --card-border: rgba(89, 190, 255, 0.38);
+  --card-border-active: rgba(89, 190, 255, 0.95);
+}
+body.theme-nycfc .count-badge {
+  background: rgba(89, 190, 255, 0.22);
+  border-color: #59beff;
+  color: #ffffff;
+}
+body.theme-nycfc .session-card,
+body.theme-nycfc .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.68), inset 0 0 24px rgba(89, 190, 255, 0.08);
+}
+
+/* ==========================================================================
+   4. LAYOUT RESET, HEADER, FOOTER, CLOCK & EMPTY STATES
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-stack) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2.2vh 3vw 1.5vh 3vw;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.2vh;
+  flex-shrink: 0;
+}
+
+.header-left {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+}
+
+.header-left h1 {
+  font-size: clamp(2rem, 3.2vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: baseline;
+}
+
+.header-separator {
+  margin: 0 0.55em;
+  color: var(--text-muted);
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.header-window {
+  color: var(--yellow);
+  font-weight: 600;
+  margin-left: 0.4em;
+}
+
+footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 0.8vh;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.45);
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vh;
+}
+
+.footer-meta-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-meta-pills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: baseline;
+  gap: 2vw;
+  text-align: right;
+}
+
+.footer-countdown-container {
+  display: none;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.footer-countdown-container.is-active {
+  display: inline-flex;
+}
+
+.countdown-label {
+  font-size: clamp(1rem, 1.35vw, 1.6rem);
+  font-weight: 600;
+  color: var(--text-sub);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.countdown-clock,
+.footer-clock {
+  font-size: clamp(2.4rem, 3.8vw, 4.4rem);
+  font-weight: 300;
+  color: var(--yellow);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.no-sessions {
+  grid-column: 1 / -1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  text-align: center;
+  padding: 6vh;
+}
+
+.no-sessions h2 {
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-sub);
 }
