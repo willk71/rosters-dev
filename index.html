@@ -258,7 +258,6 @@
     function getQueueLocation(courts, title = '') {
       if (!courts || courts.length === 0) return 'TBD';
 
-      // Normalize court numbers to integers
       const nums = courts
         .map(c => parseInt(c, 10))
         .filter(n => !isNaN(n))
@@ -266,27 +265,54 @@
 
       const t = title.toLowerCase();
 
-      // Explicit keyword checks first
+      // 1. Social / Open Play override
       if (t.includes('all level')) {
-        return 'Main Hub / Breezeway Entry';
-      }
-      if (t.includes('gated')) {
-        const minCourt = nums.length > 0 ? Math.min(...nums) : '';
-        return `Stanchion Rack outside Court ${minCourt} Entry`;
+        return 'Court 4 Table';
       }
 
-      // Bank/cluster heuristics
-      if (nums.some(n => [1, 2, 4, 5].includes(n))) {
-        return 'Walkway Entry (Courts 2 & 4)';
+      // 2. Far-side Back Row Constraint (Courts 3, 6, 9, 11)
+      // Only valid if ALL assigned courts are in the back row, and NOT 6 + 9
+      const BACK_COURTS = new Set([3, 6, 9, 11]);
+      const isAllBack = nums.every(n => BACK_COURTS.has(n));
+      const has6And9 = nums.includes(6) && nums.includes(9);
+
+      if (isAllBack && !has6And9) {
+        if (nums.some(n => [3, 6].includes(n))) {
+          return 'Court 6 High Table';
+        }
+        if (nums.some(n => [9, 11].includes(n))) {
+          return 'Court 11 High Table';
+        }
       }
-      if (nums.some(n => [7, 8].includes(n))) {
-        return 'Stanchion Post outside Court 7';
-      }
+
+      // 3. Bank 10, 11, 12 (Front / Middle configurations)
       if (nums.some(n => [10, 11, 12].includes(n))) {
-        return 'Dividing Fence between Courts 10 & 11';
+        if (nums.includes(12) && !nums.includes(10)) {
+          return 'Court 12 Table';
+        }
+        // Gated sessions on Court 10 route to Dedicated Left rack
+        if (t.includes('gated')) {
+          return 'Court 10 Paddle Rack - Left';
+        }
+        return 'Court 10 Paddle Rack - Right';
       }
 
-      return `Entrance near Court ${nums[0]}`;
+      // 4. Bank 7, 8, 9 (Courts 8 & 9 route to Court 7)
+      if (nums.some(n => [7, 8, 9].includes(n))) {
+        return 'Court 7 Paddle Rack';
+      }
+
+      // 5. Bank 4, 5, 6 (Courts 5 & 6 route to Court 4)
+      if (nums.some(n => [4, 5, 6].includes(n))) {
+        return 'Court 4 Table';
+      }
+
+      // 6. Bank 1, 2, 3 (Courts 2 & 3 route to Court 1)
+      if (nums.some(n => [1, 2, 3].includes(n))) {
+        return 'Court 1 Paddle Rack';
+      }
+
+      return 'Court 1 Paddle Rack';
     }
 
     async function refreshDisplay() {
