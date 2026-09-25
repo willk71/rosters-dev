@@ -294,7 +294,7 @@
       padding: 1.8vh 1.8vw;
       display: flex;
       flex-direction: column;
-      gap: 1vh;
+      gap: 1.2vh;
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -313,24 +313,24 @@
     .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       gap: 1rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 0.8vh;
+      padding-bottom: 1vh;
       flex-shrink: 0;
     }
 
     .header-titles {
       display: flex;
       flex-direction: column;
-      gap: 0.2vh;
+      gap: 0.35vh;
       min-width: 0;
     }
 
     .line-title {
-      font-size: var(--title-font-size, clamp(1.35rem, 1.7vw, 2.1rem));
+      font-size: var(--title-font-size, clamp(2.0rem, 2.5vw, 3.15rem));
       font-weight: 700;
-      letter-spacing: 0.01em;
+      letter-spacing: -0.01em;
       color: var(--text-main);
       line-height: 1.15;
       white-space: nowrap;
@@ -339,10 +339,11 @@
     }
 
     .line-courts {
-      font-size: var(--courts-font-size, clamp(1.05rem, 1.35vw, 1.6rem));
-      font-weight: 500;
+      font-size: var(--courts-font-size, clamp(1.55rem, 2.0vw, 2.4rem));
+      font-weight: 600;
       color: var(--yellow);
       letter-spacing: -0.01em;
+      line-height: 1.2;
     }
 
     .card-meta {
@@ -354,11 +355,11 @@
     }
 
     .count-badge {
-      font-size: clamp(0.75rem, 0.85vw, 0.95rem);
+      font-size: clamp(0.85rem, 1.0vw, 1.15rem);
       color: #ffffff;
       background: rgba(255, 214, 10, 0.2);
       border: 1px solid rgba(255, 214, 10, 0.4);
-      padding: 0.22rem 0.6rem;
+      padding: 0.3rem 0.75rem;
       border-radius: 999px;
       font-weight: 600;
       white-space: nowrap;
@@ -483,6 +484,8 @@
   </main>
 
   <footer>
+    <span id="theme-pill">Theme: --</span>
+    <span>&bull;</span>
     <span id="target-mode-pill">Target: --</span>
     <span>&bull;</span>
     <span id="data-refresh-time">Data Sync: --</span>
@@ -509,6 +512,19 @@
     }
     setInterval(updateClock, 1000);
     updateClock();
+
+    const themeDisplayNames = {
+      'theme-tiffany': 'Tiffany',
+      'theme-usopen': 'US Open',
+      'theme-apple': 'Apple',
+      'theme-rolex': 'Rolex',
+      'theme-porsche': 'Porsche',
+      'theme-rolandgarros': 'Roland-Garros',
+      'theme-ausopen': 'Australian Open',
+      'theme-vice': 'Miami Vice',
+      'theme-gulfracing': 'Gulf Racing',
+      'theme-masters': 'Masters'
+    };
 
     function applyDynamicTheme(targetTime) {
       const urlTheme = (urlParams.get('theme') || '').toLowerCase().trim();
@@ -556,6 +572,12 @@
 
       document.body.classList.remove(...allThemes);
       document.body.classList.add(themeToApply);
+
+      const displayName = themeDisplayNames[themeToApply] || 'Default';
+      const themePill = document.getElementById('theme-pill');
+      if (themePill) {
+        themePill.textContent = `Theme: ${displayName}`;
+      }
     }
 
     function formatTime(isoString, isEndTime = false) {
@@ -768,10 +790,14 @@
         let uniformFontSize = 'clamp(1rem, 1.25vw, 1.45rem)';
         let uniformRowGap = '0.7vh';
         let uniformColGap = '1.8vw';
-        let uniformTitleSize = 'clamp(1.5rem, 1.9vw, 2.3rem)';
-        let uniformCourtsSize = 'clamp(1.15rem, 1.45vw, 1.7rem)';
+
+        // 50% larger session titles & courts
+        let uniformTitleSize = 'clamp(2.25rem, 2.85vw, 3.45rem)';
+        let uniformCourtsSize = 'clamp(1.72rem, 2.18vw, 2.55rem)';
 
         if (isSingle) {
+          uniformTitleSize = 'clamp(2.4rem, 3.0vw, 3.6rem)';
+          uniformCourtsSize = 'clamp(1.85rem, 2.3vw, 2.7rem)';
           if (totalReportPlayers > 44) {
             uniformCols = 3;
             uniformFontSize = 'clamp(0.95rem, 1.05vw, 1.2rem)';
@@ -787,6 +813,8 @@
             uniformRowGap = '0.9vh';
           }
         } else if (totalSessions === 2) {
+          uniformTitleSize = 'clamp(2.25rem, 2.85vw, 3.45rem)';
+          uniformCourtsSize = 'clamp(1.72rem, 2.18vw, 2.55rem)';
           if (totalReportPlayers > 60) {
             uniformCols = 3;
             uniformFontSize = 'clamp(0.9rem, 1.0vw, 1.15rem)';
@@ -802,8 +830,8 @@
             uniformRowGap = '0.8vh';
           }
         } else if (totalSessions === 3) {
-          uniformTitleSize = 'clamp(1.3rem, 1.5vw, 1.8rem)';
-          uniformCourtsSize = 'clamp(1.0rem, 1.25vw, 1.45rem)';
+          uniformTitleSize = 'clamp(1.95rem, 2.25vw, 2.7rem)';
+          uniformCourtsSize = 'clamp(1.5rem, 1.88vw, 2.18rem)';
           if (totalReportPlayers > 65) {
             uniformCols = 2;
             uniformFontSize = 'clamp(0.85rem, 0.95vw, 1.15rem)';
@@ -821,8 +849,8 @@
             uniformColGap = '1.4vw';
           }
         } else {
-          uniformTitleSize = 'clamp(1.15rem, 1.35vw, 1.6rem)';
-          uniformCourtsSize = 'clamp(0.95rem, 1.1vw, 1.35rem)';
+          uniformTitleSize = 'clamp(1.72rem, 2.0vw, 2.4rem)';
+          uniformCourtsSize = 'clamp(1.42rem, 1.65vw, 2.0rem)';
           if (totalReportPlayers > 70) {
             uniformCols = 3;
             uniformFontSize = 'clamp(0.76rem, 0.85vw, 1.0rem)';
