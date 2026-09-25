@@ -276,18 +276,22 @@
 
       const t = title.toLowerCase();
 
-      // 1. Explicit Rule: Any group including courts 7 and 8 stacks at Court 7
+      // 1. Explicit Rule: Any group on Courts 1 and 2 stacks at Court 1 Paddle Rack
+      if (nums.includes(1) && nums.includes(2)) {
+        return 'Court 1 Paddle Rack';
+      }
+
+      // 2. Explicit Rule: Any group including courts 7 and 8 stacks at Court 7
       if (nums.includes(7) && nums.includes(8)) {
         return 'Court 7 Paddle Rack';
       }
 
-      // 2. Explicit Rule: Any group that includes 11 and 12 but not 7 stacks at Court 10 Right
+      // 3. Explicit Rule: Any group that includes 11 and 12 but not 7 stacks at Court 10 Right
       if (nums.includes(11) && nums.includes(12) && !nums.includes(7)) {
         return 'Court 10 Paddle Rack - Right';
       }
 
-      // 3. Far-side Back Row Constraint (Courts 3, 6, 9, 11)
-      // Only valid if ALL assigned courts are in the back row, and NOT 6 + 9
+      // 4. Far-side Back Row Constraint (Courts 3, 6, 9, 11)
       const BACK_COURTS = new Set([3, 6, 9, 11]);
       const isAllBack = nums.every(n => BACK_COURTS.has(n));
       const has6And9 = nums.includes(6) && nums.includes(9);
@@ -301,12 +305,12 @@
         }
       }
 
-      // 4. Social / Open Play override
+      // 5. Social / Open Play override
       if (t.includes('all level')) {
         return 'Court 4 Table';
       }
 
-      // 5. Remaining Bank 10, 11, 12 configurations
+      // 6. Remaining Bank 10, 11, 12 configurations
       if (nums.some(n => [10, 11, 12].includes(n))) {
         if (nums.includes(12) && !nums.includes(10)) {
           return 'Court 12 Table';
@@ -317,17 +321,17 @@
         return 'Court 10 Paddle Rack - Right';
       }
 
-      // 6. Remaining Bank 7, 8, 9 configurations (e.g., just Court 7 or 7+9)
+      // 7. Remaining Bank 7, 8, 9 configurations (e.g., just Court 7 or 7+9)
       if (nums.some(n => [7, 8, 9].includes(n))) {
         return 'Court 7 Paddle Rack';
       }
 
-      // 7. Bank 4, 5, 6 (Courts 5 & 6 route to Court 4)
+      // 8. Bank 4, 5, 6 (Courts 5 & 6 route to Court 4)
       if (nums.some(n => [4, 5, 6].includes(n))) {
         return 'Court 4 Table';
       }
 
-      // 8. Bank 1, 2, 3 (Courts 2 & 3 route to Court 1)
+      // 9. Bank 1, 2, 3 fallback
       if (nums.some(n => [1, 2, 3].includes(n))) {
         return 'Court 1 Paddle Rack';
       }
@@ -376,6 +380,9 @@
         // Detect upcoming transition epoch (session start or end)
         let closestFutureEpoch = null;
         events.forEach(e => {
+          const rawName = `${e.title || ''} ${e.DivisionName || ''} ${e.EventName || ''}`;
+          if (/\b(road|king)\b/i.test(rawName)) return; // Exclude Road and King transitions
+
           const s = new Date(e.startTime || e.StartTime).getTime();
           let endDt = new Date(e.endTime || e.EndTime);
           if (endDt.getHours() === 23 && endDt.getMinutes() === 59) {
@@ -397,6 +404,10 @@
         const eventMap = {};
 
         events.forEach(e => {
+          // Filter out Road and King events
+          const rawName = `${e.title || ''} ${e.DivisionName || ''} ${e.EventName || ''}`;
+          if (/\b(road|king)\b/i.test(rawName)) return;
+
           if (!isRunningAtTarget(e.startTime, e.endTime)) return;
           const key = `${e.eventId || e.EventId}_${e.startTime || e.StartTime}`;
 
