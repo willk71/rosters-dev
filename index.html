@@ -20,7 +20,7 @@
       --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     }
 
-    /* 1. Tiffany Morning: Luminous Deep Petrol / Mint Frost */
+    /* 1. Tiffany Morning: Petrol & Mint Frost (7:00 AM & 9:00 AM) */
     body.theme-tiffany {
       --bg-gradient: radial-gradient(circle at 50% 10%, #0d2826 0%, #061514 60%, #020707 100%);
       --yellow: #2de2b6;
@@ -32,7 +32,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(45, 226, 182, 0.05);
     }
 
-    /* 2. US Open Afternoon: Electric Court Navy & Volt */
+    /* 2. US Open Afternoon: Arthur Ashe Navy & Optic Volt (11:00 AM - 5:00 PM) */
     body.theme-usopen {
       --bg-gradient: radial-gradient(circle at 50% 10%, #0a2540 0%, #051329 60%, #020712 100%);
       --yellow: #ccff00;
@@ -44,7 +44,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(204, 255, 0, 0.06);
     }
 
-    /* 3. Apple Prime: Pure OLED Black & Canary Yellow */
+    /* 3. Apple Prime: OLED Black & Canary Yellow (5:30 PM - 7:00 PM) */
     body.theme-apple {
       --bg-gradient: radial-gradient(circle at 50% 10%, #242426 0%, #121214 65%, #000000 100%);
       --yellow: #ffd60a;
@@ -53,7 +53,7 @@
       --card-border-active: rgba(255, 214, 10, 0.85);
     }
 
-    /* 4. Rolex Evening: British Racing Green & Warm Champagne */
+    /* 4. Rolex Evening: British Racing Green & Champagne Gold (7:30 PM - 9:00 PM) */
     body.theme-rolex {
       --bg-gradient: radial-gradient(circle at 50% 10%, #0e2417 0%, #07130c 60%, #020503 100%);
       --yellow: #e5c158;
@@ -65,7 +65,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(229, 193, 88, 0.05);
     }
 
-    /* 5. Porsche Late Night: Carbon Slate & GT Signal Amber */
+    /* 5. Porsche Late Night: Carbon Gunmetal & Signal Amber (9:30 PM onward) */
     body.theme-porsche {
       --bg-gradient: radial-gradient(circle at 50% 10%, #2a1b12 0%, #150d09 60%, #050302 100%);
       --yellow: #ff9f0a;
@@ -75,6 +75,66 @@
     }
     body.theme-porsche .session-card {
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(255, 159, 10, 0.08);
+    }
+
+    /* 6. Roland-Garros: Paris Smoked Clay & Scorched Orange */
+    body.theme-rolandgarros {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #301712 0%, #160a08 60%, #060202 100%);
+      --yellow: #ff6e40;
+      --card-bg: rgba(48, 23, 18, 0.65);
+      --card-border: rgba(255, 110, 64, 0.35);
+      --card-border-active: rgba(255, 110, 64, 0.95);
+    }
+    body.theme-rolandgarros .session-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(255, 110, 64, 0.08);
+    }
+
+    /* 7. Australian Open: Melbourne Oceanic Trench & Laser Cyan */
+    body.theme-ausopen {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0a2b47 0%, #041424 60%, #01060d 100%);
+      --yellow: #00f5d4;
+      --card-bg: rgba(7, 36, 64, 0.7);
+      --card-border: rgba(0, 245, 212, 0.35);
+      --card-border-active: rgba(0, 245, 212, 0.95);
+    }
+    body.theme-ausopen .session-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 25px rgba(0, 245, 212, 0.08);
+    }
+
+    /* 8. Miami Vice: Dark Velvet Plum & Electric Hot Pink */
+    body.theme-vice {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #290d33 0%, #130519 60%, #040106 100%);
+      --yellow: #ff2a85;
+      --card-bg: rgba(40, 14, 48, 0.65);
+      --card-border: rgba(255, 42, 133, 0.32);
+      --card-border-active: rgba(255, 42, 133, 0.95);
+    }
+    body.theme-vice .session-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(255, 42, 133, 0.08);
+    }
+
+    /* 9. Gulf Racing: Le Mans Petrol Blue & Tangerine Orange */
+    body.theme-gulfracing {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #152b33 0%, #0b171c 60%, #020506 100%);
+      --yellow: #ff7800;
+      --card-bg: rgba(18, 41, 51, 0.65);
+      --card-border: rgba(255, 120, 0, 0.35);
+      --card-border-active: rgba(255, 120, 0, 0.95);
+    }
+    body.theme-gulfracing .session-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(255, 120, 0, 0.08);
+    }
+
+    /* 10. Masters: Augusta Deep Pine & Azalea Gold */
+    body.theme-masters {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0b291d 0%, #05140e 60%, #010403 100%);
+      --yellow: #f5b700;
+      --card-bg: rgba(10, 38, 27, 0.68);
+      --card-border: rgba(245, 183, 0, 0.32);
+      --card-border-active: rgba(245, 183, 0, 0.92);
+    }
+    body.theme-masters .session-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(245, 183, 0, 0.07);
     }
 
     * {
@@ -167,6 +227,7 @@
       min-height: 0;
     }
 
+    /* 1 session: full centered card */
     main.count-1 {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
@@ -178,15 +239,18 @@
       grid-template-rows: 1fr 1fr;
     }
 
+    /* 3 sessions: 3 columns */
     main.count-3 {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
+    /* 4 sessions: 2x2 grid */
     main.count-4 {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
     }
 
+    /* 5-6 sessions: 3x2 grid */
     main.count-5, main.count-6 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
@@ -201,7 +265,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 1.5vh;
+      gap: 1.8vh;
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
@@ -232,8 +296,9 @@
       text-align: right;
     }
 
+    /* 50% larger session titles across all card layouts */
     .session-title {
-      font-size: clamp(2rem, 3vw, 4rem);
+      font-size: clamp(3.0rem, 4.5vw, 6.0rem);
       font-weight: 700;
       letter-spacing: -0.01em;
       color: var(--text-main);
@@ -244,38 +309,39 @@
     }
 
     main.count-1 .session-title {
-      font-size: clamp(3rem, 5vw, 6rem);
+      font-size: clamp(4.5rem, 7.5vw, 9.0rem);
     }
 
     main.count-2 .session-title {
-      font-size: clamp(2.4rem, 3.6vw, 4.6rem);
+      font-size: clamp(3.6rem, 5.4vw, 6.9rem);
     }
 
     main.count-3 .session-title {
-      font-size: clamp(1.8rem, 2.4vw, 3rem);
+      font-size: clamp(2.7rem, 3.6vw, 4.5rem);
     }
 
     main.count-4 .session-title {
-      font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+      font-size: clamp(2.4rem, 3.3vw, 4.2rem);
     }
 
     .session-window {
-      font-size: clamp(1.1rem, 1.4vw, 1.8rem);
+      font-size: clamp(1.2rem, 1.5vw, 1.9rem);
       font-weight: 500;
       color: var(--text-muted);
       margin-top: 0.6vh;
     }
 
     main.count-1 .session-window {
-      font-size: clamp(1.4rem, 2vw, 2.4rem);
+      font-size: clamp(1.6rem, 2.2vw, 2.6rem);
     }
 
     main.count-2 .session-window {
-      font-size: clamp(1.3rem, 1.8vw, 2.2rem);
+      font-size: clamp(1.45rem, 2.0vw, 2.4rem);
     }
 
+    /* 50% larger court labels across all card layouts */
     .session-courts {
-      font-size: clamp(1.8rem, 2.6vw, 3.4rem);
+      font-size: clamp(2.7rem, 3.9vw, 5.1rem);
       font-weight: 600;
       color: var(--yellow);
       letter-spacing: -0.01em;
@@ -283,19 +349,19 @@
     }
 
     main.count-1 .session-courts {
-      font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+      font-size: clamp(4.2rem, 6.75vw, 7.8rem);
     }
 
     main.count-2 .session-courts {
-      font-size: clamp(2.2rem, 3.4vw, 4.4rem);
+      font-size: clamp(3.3rem, 5.1vw, 6.6rem);
     }
 
     main.count-3 .session-courts {
-      font-size: clamp(1.5rem, 2vw, 2.6rem);
+      font-size: clamp(2.25rem, 3.0vw, 3.9rem);
     }
 
     main.count-4 .session-courts {
-      font-size: clamp(1.4rem, 1.8vw, 2.4rem);
+      font-size: clamp(2.1rem, 2.7vw, 3.6rem);
     }
 
     footer {
@@ -358,6 +424,8 @@
   </main>
 
   <footer>
+    <span id="theme-pill">Theme: --</span>
+    <span>&bull;</span>
     <span id="target-mode-pill">Target: --</span>
     <span>&bull;</span>
     <span id="data-refresh-time">Data Sync: --</span>
@@ -385,14 +453,38 @@
     setInterval(updateClock, 1000);
     updateClock();
 
+    const themeDisplayNames = {
+      'theme-tiffany': 'Tiffany',
+      'theme-usopen': 'US Open',
+      'theme-apple': 'Apple',
+      'theme-rolex': 'Rolex',
+      'theme-porsche': 'Porsche',
+      'theme-rolandgarros': 'Roland-Garros',
+      'theme-ausopen': 'Australian Open',
+      'theme-vice': 'Miami Vice',
+      'theme-gulfracing': 'Gulf Racing',
+      'theme-masters': 'Masters'
+    };
+
     function applyDynamicTheme(targetTime) {
-      const urlTheme = urlParams.get('theme');
-      const allThemes = ['theme-tiffany', 'theme-usopen', 'theme-apple', 'theme-rolex', 'theme-porsche'];
+      const urlTheme = (urlParams.get('theme') || '').toLowerCase().trim();
+      const allThemes = [
+        'theme-tiffany',
+        'theme-usopen',
+        'theme-apple',
+        'theme-rolex',
+        'theme-porsche',
+        'theme-rolandgarros',
+        'theme-ausopen',
+        'theme-vice',
+        'theme-gulfracing',
+        'theme-masters'
+      ];
       
       let themeToApply = 'theme-apple';
 
-      if (urlTheme && allThemes.includes(`theme-${urlTheme.toLowerCase()}`)) {
-        themeToApply = `theme-${urlTheme.toLowerCase()}`;
+      if (urlTheme && allThemes.includes(`theme-${urlTheme}`)) {
+        themeToApply = `theme-${urlTheme}`;
       } else {
         const totalMinutes = targetTime.getHours() * 60 + targetTime.getMinutes();
 
@@ -420,6 +512,12 @@
 
       document.body.classList.remove(...allThemes);
       document.body.classList.add(themeToApply);
+
+      const displayName = themeDisplayNames[themeToApply] || 'Default';
+      const themePill = document.getElementById('theme-pill');
+      if (themePill) {
+        themePill.textContent = `Theme: ${displayName}`;
+      }
     }
 
     function formatTime(isoString, isEndTime = false) {
@@ -504,6 +602,7 @@
           const s = new Date(startIso);
           let e = new Date(endIso);
 
+          // Extend late-night sessions ending at 23:59 through 1:00 AM
           if (e.getHours() === 23 && e.getMinutes() === 59) {
             e = new Date(e.getTime() + 61 * 60 * 1000);
           }
