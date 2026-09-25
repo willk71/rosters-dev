@@ -7,10 +7,10 @@
   <title>Welcome to IPX! &ndash; Live Session Rosters</title>
   <style>
     :root {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #1c1c1e 0%, #121214 65%, #000000 100%);
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --card-border: rgba(255, 255, 255, 0.10);
-      --card-border-active: rgba(255, 214, 10, 0.55);
+      --bg-gradient: radial-gradient(circle at 50% 10%, #242426 0%, #121214 65%, #000000 100%);
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --card-border-active: rgba(255, 214, 10, 0.85);
 
       --yellow: #ffd60a;
       --text-main: #ffffff;
@@ -23,89 +23,171 @@
       --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     }
 
-    /* 1. Tiffany Mint (7:00 AM & 9:00 AM Sessions) */
+    /* 1. Tiffany Morning: Petrol & Mint Frost (7:00 AM & 9:00 AM) */
     body.theme-tiffany {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #0d1617 0%, #090e0f 65%, #030505 100%);
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0d2826 0%, #061514 60%, #020707 100%);
       --yellow: #2de2b6;
-      --card-border-active: rgba(45, 226, 182, 0.65);
-      --card-bg: rgba(45, 226, 182, 0.04);
-      --card-border: rgba(45, 226, 182, 0.16);
+      --card-bg: rgba(45, 226, 182, 0.09);
+      --card-border: rgba(45, 226, 182, 0.28);
+      --card-border-active: rgba(45, 226, 182, 0.85);
     }
     body.theme-tiffany .count-badge {
-      background: rgba(45, 226, 182, 0.18);
-      border-color: rgba(45, 226, 182, 0.45);
+      background: rgba(45, 226, 182, 0.25);
+      border-color: #2de2b6;
       color: #ffffff;
     }
-    body.theme-tiffany .roster-card.is-now {
-      box-shadow: 0 0 35px rgba(45, 226, 182, 0.22);
+    body.theme-tiffany .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(45, 226, 182, 0.05);
     }
 
-    /* 2. US Open Volt (11:00 AM - 5:00 PM Sessions) */
+    /* 2. US Open Afternoon: Arthur Ashe Navy & Optic Volt (11:00 AM - 5:00 PM) */
     body.theme-usopen {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #0c182b 0%, #060d17 65%, #020509 100%);
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0a2540 0%, #051329 60%, #020712 100%);
       --yellow: #ccff00;
-      --card-border-active: rgba(204, 255, 0, 0.65);
-      --card-bg: rgba(204, 255, 0, 0.04);
-      --card-border: rgba(204, 255, 0, 0.16);
+      --card-bg: rgba(10, 37, 64, 0.7);
+      --card-border: rgba(204, 255, 0, 0.3);
+      --card-border-active: rgba(204, 255, 0, 0.9);
     }
     body.theme-usopen .count-badge {
-      background: rgba(204, 255, 0, 0.18);
-      border-color: rgba(204, 255, 0, 0.45);
+      background: rgba(204, 255, 0, 0.22);
+      border-color: #ccff00;
       color: #ffffff;
     }
-    body.theme-usopen .roster-card.is-now {
-      box-shadow: 0 0 35px rgba(204, 255, 0, 0.25);
+    body.theme-usopen .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(204, 255, 0, 0.06);
     }
 
-    /* 3. Apple HIG (5:30 PM - 7:00 PM Sessions) */
+    /* 3. Apple Prime: OLED Black & Canary Yellow (5:30 PM - 7:00 PM) */
     body.theme-apple {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #1c1c1e 0%, #121214 65%, #000000 100%);
+      --bg-gradient: radial-gradient(circle at 50% 10%, #242426 0%, #121214 65%, #000000 100%);
       --yellow: #ffd60a;
-      --card-border-active: rgba(255, 214, 10, 0.55);
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --card-border: rgba(255, 255, 255, 0.10);
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --card-border-active: rgba(255, 214, 10, 0.85);
     }
     body.theme-apple .count-badge {
-      background: rgba(255, 214, 10, 0.2);
-      border-color: rgba(255, 214, 10, 0.4);
+      background: rgba(255, 214, 10, 0.22);
+      border-color: #ffd60a;
       color: #ffffff;
     }
-    body.theme-apple .roster-card.is-now {
-      box-shadow: 0 0 35px rgba(255, 214, 10, 0.15);
-    }
 
-    /* 4. Rolex Club Champagne (7:30 PM - 9:00 PM Sessions) */
+    /* 4. Rolex Evening: British Racing Green & Champagne Gold (7:30 PM - 9:00 PM) */
     body.theme-rolex {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #111a14 0%, #0a100d 65%, #050807 100%);
-      --yellow: #d4af37;
-      --card-border-active: rgba(212, 175, 55, 0.65);
-      --card-bg: rgba(212, 175, 55, 0.04);
-      --card-border: rgba(212, 175, 55, 0.16);
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0e2417 0%, #07130c 60%, #020503 100%);
+      --yellow: #e5c158;
+      --card-bg: rgba(14, 36, 23, 0.65);
+      --card-border: rgba(229, 193, 88, 0.3);
+      --card-border-active: rgba(229, 193, 88, 0.9);
     }
     body.theme-rolex .count-badge {
-      background: rgba(212, 175, 55, 0.18);
-      border-color: rgba(212, 175, 55, 0.45);
+      background: rgba(229, 193, 88, 0.22);
+      border-color: #e5c158;
       color: #ffffff;
     }
-    body.theme-rolex .roster-card.is-now {
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.22);
+    body.theme-rolex .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(229, 193, 88, 0.05);
     }
 
-    /* 5. Porsche Signal Amber (9:30 PM - Late Night Sessions) */
+    /* 5. Porsche Late Night: Carbon Gunmetal & Signal Amber (9:30 PM onward) */
     body.theme-porsche {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #181a20 0%, #0e1013 65%, #050607 100%);
+      --bg-gradient: radial-gradient(circle at 50% 10%, #2a1b12 0%, #150d09 60%, #050302 100%);
       --yellow: #ff9f0a;
-      --card-border-active: rgba(255, 159, 10, 0.65);
-      --card-bg: rgba(255, 159, 10, 0.04);
-      --card-border: rgba(255, 159, 10, 0.16);
+      --card-bg: rgba(42, 27, 18, 0.55);
+      --card-border: rgba(255, 159, 10, 0.32);
+      --card-border-active: rgba(255, 159, 10, 0.9);
     }
     body.theme-porsche .count-badge {
-      background: rgba(255, 159, 10, 0.18);
-      border-color: rgba(255, 159, 10, 0.45);
+      background: rgba(255, 159, 10, 0.25);
+      border-color: #ff9f0a;
       color: #ffffff;
     }
-    body.theme-porsche .roster-card.is-now {
-      box-shadow: 0 0 35px rgba(255, 159, 10, 0.25);
+    body.theme-porsche .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(255, 159, 10, 0.08);
+    }
+
+    /* 6. Roland-Garros: Paris Smoked Clay & Scorched Orange */
+    body.theme-rolandgarros {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #301712 0%, #160a08 60%, #060202 100%);
+      --yellow: #ff6e40;
+      --card-bg: rgba(48, 23, 18, 0.65);
+      --card-border: rgba(255, 110, 64, 0.35);
+      --card-border-active: rgba(255, 110, 64, 0.95);
+    }
+    body.theme-rolandgarros .count-badge {
+      background: rgba(255, 110, 64, 0.25);
+      border-color: #ff6e40;
+      color: #ffffff;
+    }
+    body.theme-rolandgarros .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(255, 110, 64, 0.08);
+    }
+
+    /* 7. Australian Open: Melbourne Oceanic Trench & Laser Cyan */
+    body.theme-ausopen {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0a2b47 0%, #041424 60%, #01060d 100%);
+      --yellow: #00f5d4;
+      --card-bg: rgba(7, 36, 64, 0.7);
+      --card-border: rgba(0, 245, 212, 0.35);
+      --card-border-active: rgba(0, 245, 212, 0.95);
+    }
+    body.theme-ausopen .count-badge {
+      background: rgba(0, 245, 212, 0.22);
+      border-color: #00f5d4;
+      color: #ffffff;
+    }
+    body.theme-ausopen .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 25px rgba(0, 245, 212, 0.08);
+    }
+
+    /* 8. Miami Vice: Dark Velvet Plum & Electric Hot Pink */
+    body.theme-vice {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #290d33 0%, #130519 60%, #040106 100%);
+      --yellow: #ff2a85;
+      --card-bg: rgba(40, 14, 48, 0.65);
+      --card-border: rgba(255, 42, 133, 0.32);
+      --card-border-active: rgba(255, 42, 133, 0.95);
+    }
+    body.theme-vice .count-badge {
+      background: rgba(255, 42, 133, 0.22);
+      border-color: #ff2a85;
+      color: #ffffff;
+    }
+    body.theme-vice .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(255, 42, 133, 0.08);
+    }
+
+    /* 9. Gulf Racing: Le Mans Petrol Blue & Tangerine Orange */
+    body.theme-gulfracing {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #152b33 0%, #0b171c 60%, #020506 100%);
+      --yellow: #ff7800;
+      --card-bg: rgba(18, 41, 51, 0.65);
+      --card-border: rgba(255, 120, 0, 0.35);
+      --card-border-active: rgba(255, 120, 0, 0.95);
+    }
+    body.theme-gulfracing .count-badge {
+      background: rgba(255, 120, 0, 0.24);
+      border-color: #ff7800;
+      color: #ffffff;
+    }
+    body.theme-gulfracing .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(255, 120, 0, 0.08);
+    }
+
+    /* 10. Masters: Augusta Deep Pine & Azalea Gold */
+    body.theme-masters {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0b291d 0%, #05140e 60%, #010403 100%);
+      --yellow: #f5b700;
+      --card-bg: rgba(10, 38, 27, 0.68);
+      --card-border: rgba(245, 183, 0, 0.32);
+      --card-border-active: rgba(245, 183, 0, 0.92);
+    }
+    body.theme-masters .count-badge {
+      background: rgba(245, 183, 0, 0.22);
+      border-color: #f5b700;
+      color: #ffffff;
+    }
+    body.theme-masters .roster-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(245, 183, 0, 0.07);
     }
 
     * {
@@ -314,7 +396,7 @@
       flex-shrink: 0;
     }
 
-    /* Checked-in: Bright text + Apple glowing green dot */
+    /* Checked-in: Bright text + glowing green dot */
     .player-item.is-checked-in {
       color: var(--text-main);
       opacity: 1;
@@ -429,13 +511,24 @@
     updateClock();
 
     function applyDynamicTheme(targetTime) {
-      const urlTheme = urlParams.get('theme');
-      const allThemes = ['theme-tiffany', 'theme-usopen', 'theme-apple', 'theme-rolex', 'theme-porsche'];
+      const urlTheme = (urlParams.get('theme') || '').toLowerCase().trim();
+      const allThemes = [
+        'theme-tiffany',
+        'theme-usopen',
+        'theme-apple',
+        'theme-rolex',
+        'theme-porsche',
+        'theme-rolandgarros',
+        'theme-ausopen',
+        'theme-vice',
+        'theme-gulfracing',
+        'theme-masters'
+      ];
       
       let themeToApply = 'theme-apple';
 
-      if (urlTheme && allThemes.includes(`theme-${urlTheme.toLowerCase()}`)) {
-        themeToApply = `theme-${urlTheme.toLowerCase()}`;
+      if (urlTheme && allThemes.includes(`theme-${urlTheme}`)) {
+        themeToApply = `theme-${urlTheme}`;
       } else {
         const totalMinutes = targetTime.getHours() * 60 + targetTime.getMinutes();
 
