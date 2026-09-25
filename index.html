@@ -79,6 +79,7 @@
 
       const diffMs = nextTransitionTargetEpoch - Date.now();
 
+      // Only show if transitioning within 15 minutes, otherwise hide completely
       if (diffMs > 0 && diffMs <= 15 * 60 * 1000) {
         const totalSecs = Math.floor(diffMs / 1000);
         const m = Math.floor(totalSecs / 60);
@@ -100,23 +101,33 @@
       'theme-ausopen': 'Australian Open',
       'theme-vice': 'Miami Vice',
       'theme-gulfracing': 'Gulf Racing',
-      'theme-masters': 'Masters'
+      'theme-masters': 'Masters',
+      'theme-wimbledon': 'Wimbledon',
+      'theme-monaco': 'Monaco GP',
+      'theme-cyberpunk': 'Tokyo Cyberpunk',
+      'theme-ferrari': 'Ferrari Corsa',
+      'theme-glacier': 'Nordic Glacier',
+      'theme-desertclay': 'Desert Clay',
+      'theme-astonmartin': 'Aston Martin AMR',
+      'theme-solarflare': 'Solar Flare',
+      'theme-stealth': 'Stealth Titanium',
+      'theme-lakers': 'Showtime',
+      // NYC Metro Teams (no Buffalo)
+      'theme-yankees': 'NY Yankees',
+      'theme-mets': 'NY Mets',
+      'theme-knicks': 'NY Knicks',
+      'theme-nets': 'Brooklyn Nets',
+      'theme-liberty': 'NY Liberty',
+      'theme-giants': 'NY Giants',
+      'theme-jets': 'NY Jets',
+      'theme-rangers': 'NY Rangers',
+      'theme-islanders': 'NY Islanders',
+      'theme-nycfc': 'NYCFC'
     };
 
     function applyDynamicTheme(targetTime) {
       const urlTheme = (urlParams.get('theme') || '').toLowerCase().trim();
-      const allThemes = [
-        'theme-tiffany',
-        'theme-usopen',
-        'theme-apple',
-        'theme-rolex',
-        'theme-porsche',
-        'theme-rolandgarros',
-        'theme-ausopen',
-        'theme-vice',
-        'theme-gulfracing',
-        'theme-masters'
-      ];
+      const allThemes = Object.keys(themeDisplayNames);
       
       let themeToApply = 'theme-apple';
 
@@ -125,15 +136,24 @@
       } else {
         const totalMinutes = targetTime.getHours() * 60 + targetTime.getMinutes();
 
+        // 7:00 AM (420) to 10:59 AM (659)
         if (totalMinutes >= 420 && totalMinutes < 660) {
           themeToApply = 'theme-tiffany';
-        } else if (totalMinutes >= 660 && totalMinutes < 1035) {
+        }
+        // 11:00 AM (660) to 5:14 PM (1034)
+        else if (totalMinutes >= 660 && totalMinutes < 1035) {
           themeToApply = 'theme-usopen';
-        } else if (totalMinutes >= 1035 && totalMinutes < 1155) {
+        }
+        // 5:15 PM (1035) to 7:14 PM (1154)
+        else if (totalMinutes >= 1035 && totalMinutes < 1155) {
           themeToApply = 'theme-apple';
-        } else if (totalMinutes >= 1155 && totalMinutes < 1275) {
+        }
+        // 7:15 PM (1155) to 9:14 PM (1274)
+        else if (totalMinutes >= 1155 && totalMinutes < 1275) {
           themeToApply = 'theme-rolex';
-        } else {
+        }
+        // 9:15 PM (1275) through late night
+        else {
           themeToApply = 'theme-porsche';
         }
       }
@@ -152,6 +172,7 @@
       if (!isoString) return '';
       const d = new Date(isoString);
 
+      // Late-night CourtReserve truncations (23:59 -> 1:00 AM)
       if (isEndTime && d.getHours() === 23 && d.getMinutes() === 59) {
         return '1:00 AM';
       }
@@ -228,6 +249,7 @@
           const s = new Date(startIso);
           let e = new Date(endIso);
 
+          // Extend late-night sessions ending at 23:59 through 1:00 AM
           if (e.getHours() === 23 && e.getMinutes() === 59) {
             e = new Date(e.getTime() + 61 * 60 * 1000);
           }
@@ -237,6 +259,7 @@
 
         const events = Array.isArray(data) ? data : (data.events || []);
 
+        // Detect upcoming transition epoch (session start or end)
         let closestFutureEpoch = null;
         events.forEach(e => {
           const s = new Date(e.startTime || e.StartTime).getTime();
