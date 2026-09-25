@@ -340,3 +340,182 @@ footer {
   letter-spacing: -0.03em;
   color: var(--text-sub);
 }
+/* 11. Wimbledon All-England: Lawn Green & Violet */
+body.theme-wimbledon {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #0d2818 0%, #06170d 60%, #020804 100%);
+  --yellow: #b388ff;
+  --card-bg: rgba(22, 13, 36, 0.72);
+  --card-border: rgba(179, 136, 255, 0.35);
+  --card-border-active: rgba(179, 136, 255, 0.95);
+}
+body.theme-wimbledon .count-badge {
+  background: rgba(179, 136, 255, 0.22);
+  border-color: #b388ff;
+  color: #ffffff;
+}
+body.theme-wimbledon .session-card,
+body.theme-wimbledon .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(179, 136, 255, 0.08);
+}
+
+/* 12. Monaco Grand Prix: Black Onyx & Casino Gold */
+body.theme-monaco {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #2b0b11 0%, #150508 60%, #050102 100%);
+  --yellow: #ffd700;
+  --card-bg: rgba(38, 12, 18, 0.7);
+  --card-border: rgba(255, 215, 0, 0.35);
+  --card-border-active: rgba(255, 215, 0, 0.95);
+}
+body.theme-monaco .count-badge {
+  background: rgba(255, 215, 0, 0.24);
+  border-color: #ffd700;
+  color: #ffffff;
+}
+body.theme-monaco .session-card,
+body.theme-monaco .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 24px rgba(255, 215, 0, 0.08);
+}
+
+/* 13. Tokyo Cyberpunk: Carbon & Electric Lavender */
+body.theme-cyberpunk {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #1f1135 0%, #0e071c 60%, #04020a 100%);
+  --yellow: #d946ef;
+  --card-bg: rgba(35, 17, 58, 0.68);
+  --card-border: rgba(217, 70, 239, 0.35);
+  --card-border-active: rgba(217, 70, 239, 0.95);
+}
+body.theme-cyberpunk .count-badge {
+  background: rgba(217, 70, 239, 0.24);
+  border-color: #d946ef;
+  color: #ffffff;
+}
+body.theme-cyberpunk .session-card,
+body.theme-cyberpunk .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(217, 70, 239, 0.08);
+}
+
+/* 14. Ferrari Corsa: Maranello Scarlet & Modena Yellow */
+body.theme-ferrari {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #2f0808 0%, #180303 60%, #070000 100%);
+  --yellow: #fff01f;
+  --card-bg: rgba(46, 12, 12, 0.7);
+  --card-border: rgba(255, 240, 31, 0.35);
+  --card-border-active: rgba(255, 240, 31, 0.95);
+}
+body.theme-ferrari .count-badge {
+  background: rgba(255, 240, 31, 0.22);
+  border-color: #fff01f;
+  color: #ffffff;
+}
+body.theme-ferrari .session-card,
+body.theme-ferrari .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 24px rgba(255, 240, 31, 0.08);
+}
+
+/* 15. Nordic Glacier: Arctic Midnight & Frost Blue */
+body.theme-glacier {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #0f2b38 0%, #08161f 60%, #020609 100%);
+  --yellow: #70d6ff;
+  --card-bg: rgba(14, 40, 54, 0.7);
+  --card-border: rgba(112, 214, 255, 0.35);
+  --card-border-active: rgba(112, 214, 255, 0.95);
+}
+body.theme-glacier .count-badge {
+  background: rgba(112, 214, 255, 0.22);
+  border-color: #70d6ff;
+  color: #ffffff;
+}
+body.theme-glacier .session-card,
+body.theme-glacier .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(112, 214, 255, 0.08);
+}
+
+/* 16. Indian Wells / Desert Clay: Smoked Terracotta & Oasis Lime */
+body.theme-desertclay {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #301a14 0%, #190c08 60%, #060201 100%);
+  --yellow: #a7f432;
+  --card-bg: rgba(48, 26, 20, 0.7);
+  --card-border: rgba(167, 244, 50, 0.35);
+  --card-border-active: rgba(167, 244, 50, 0.95);
+}
+body.theme-desertclay .count-badge {
+  background: rgba(167, 244, 50, 0.22);
+  border-color: #a7f432;
+  color: #ffffff;
+}
+body.theme-desertclay .session-card,
+body.theme-desertclay .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.68), inset 0 0 24px rgba(167, 244, 50, 0.07);
+}
+
+/* 17. Aston Martin AMR: Racing Petrol & Lime Essence */
+body.theme-astonmartin {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #062b2b 0%, #021617 60%, #000708 100%);
+  --yellow: #c6ff00;
+  --card-bg: rgba(6, 43, 43, 0.68);
+  --card-border: rgba(198, 255, 0, 0.35);
+  --card-border-active: rgba(198, 255, 0, 0.95);
+}
+body.theme-astonmartin .count-badge {
+  background: rgba(198, 255, 0, 0.24);
+  border-color: #c6ff00;
+  color: #ffffff;
+}
+body.theme-astonmartin .session-card,
+body.theme-astonmartin .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(198, 255, 0, 0.07);
+}
+
+/* 18. Solar Flare: Obsidian Ash & Sunset Gold */
+body.theme-solarflare {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #2f1906 0%, #180c02 60%, #060300 100%);
+  --yellow: #ffb703;
+  --card-bg: rgba(47, 25, 6, 0.7);
+  --card-border: rgba(255, 183, 3, 0.35);
+  --card-border-active: rgba(255, 183, 3, 0.95);
+}
+body.theme-solarflare .count-badge {
+  background: rgba(255, 183, 3, 0.24);
+  border-color: #ffb703;
+  color: #ffffff;
+}
+body.theme-solarflare .session-card,
+body.theme-solarflare .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.68), inset 0 0 24px rgba(255, 183, 3, 0.08);
+}
+
+/* 19. Night Session Stealth: OLED Triple Black & Titanium */
+body.theme-stealth {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #1a1a1a 0%, #0a0a0a 60%, #000000 100%);
+  --yellow: #ffffff;
+  --card-bg: rgba(28, 28, 30, 0.85);
+  --card-border: rgba(255, 255, 255, 0.25);
+  --card-border-active: rgba(255, 255, 255, 0.95);
+}
+body.theme-stealth .count-badge {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+body.theme-stealth .session-card,
+body.theme-stealth .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* 20. Lakers Showtime: Forum Twilight & Optic Gold */
+body.theme-lakers {
+  --bg-gradient: radial-gradient(circle at 50% 10%, #200f38 0%, #10061d 60%, #040108 100%);
+  --yellow: #fdb927;
+  --card-bg: rgba(35, 16, 61, 0.72);
+  --card-border: rgba(253, 185, 39, 0.35);
+  --card-border-active: rgba(253, 185, 39, 0.95);
+}
+body.theme-lakers .count-badge {
+  background: rgba(253, 185, 39, 0.24);
+  border-color: #fdb927;
+  color: #ffffff;
+}
+body.theme-lakers .session-card,
+body.theme-lakers .roster-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 24px rgba(253, 185, 39, 0.08);
+}
