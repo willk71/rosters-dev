@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Welcome to IPX! &ndash; Court Assignments</title>
-  <link rel="stylesheet" href="css/common.css?v=2.0.0" />
+  <link rel="stylesheet" href="css/common.css?v=2.1.2" />
 </head>
 <body class="page-index">
   <header>
@@ -21,6 +21,8 @@
       <h2>Loading Sessions...</h2>
     </div>
   </main>
+
+  <div id="court-host-container" style="display: none;"></div>
 
   <footer>
     <div class="footer-left">
@@ -42,7 +44,7 @@
     </div>
   </footer>
 
-  <script src="js/common.js?v=2.0.0"></script>
+  <script src="js/common.js?v=2.1.2"></script>
   <script>
     async function refreshDisplay() {
       try {
@@ -67,6 +69,60 @@
           ? `Target: ${targetTimeString}` 
           : 'Target: Live';
 
+        // 1. Process Court Hosts from Google Calendar
+        const hostsList = data.courtHosts || [];
+        const currentMinutes = targetTime.getHours() * 60 + targetTime.getMinutes();
+        const activeHostSet = new Set();
+
+        const parseMinutes = (timeStr) => {
+          if (!timeStr) return 0;
+          const [h, m] = String(timeStr).trim().split(':').map(Number);
+          return (h || 0) * 60 + (m || 0);
+        };
+
+        hostsList.forEach(h => {
+          if (!h.host) return;
+
+          if (!h.start || !h.end) {
+            activeHostSet.add(h.host.trim());
+            return;
+          }
+
+          const startMin = parseMinutes(h.start);
+          let endMin = parseMinutes(h.end);
+          if (endMin === 0) endMin = 24 * 60; // Midnight rollover
+
+          if (currentMinutes >= startMin && currentMinutes < endMin) {
+            activeHostSet.add(h.host.trim());
+          }
+        });
+
+        const activeHosts = Array.from(activeHostSet);
+        const hostContainer = document.getElementById('court-host-container');
+
+        if (activeHosts.length > 0) {
+          let formattedNames = '';
+          if (activeHosts.length === 1) {
+            formattedNames = activeHosts[0];
+          } else if (activeHosts.length === 2) {
+            formattedNames = activeHosts.join(' & ');
+          } else {
+            formattedNames = `${activeHosts.slice(0, -1).join(', ')} & ${activeHosts[activeHosts.length - 1]}`;
+          }
+
+          hostContainer.className = 'court-host-bar';
+          hostContainer.style.display = 'flex';
+          hostContainer.innerHTML = `
+            <span class="host-badge-label">Court Host${activeHosts.length > 1 ? 's' : ''}:</span>
+            <span class="host-names">${formattedNames}</span>
+          `;
+        } else {
+          hostContainer.className = '';
+          hostContainer.style.display = 'none';
+          hostContainer.innerHTML = '';
+        }
+
+        // 2. Process Sessions
         const isRunningAtTarget = (startIso, endIso) => {
           if (!startIso || !endIso) return false;
           const s = new Date(startIso);
