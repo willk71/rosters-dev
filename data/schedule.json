@@ -1,6 +1,18 @@
 {
-  "lastUpdated": "2026-09-26T15:43:53Z",
+  "lastUpdated": "2026-09-26T15:57:44Z",
   "date": "2026-09-26",
+  "courtHosts": [
+    {
+      "start": "09:00",
+      "end": "14:00",
+      "host": "Lillian H"
+    },
+    {
+      "start": "17:00",
+      "end": "21:00",
+      "host": "Will K"
+    }
+  ],
   "reservations": [
     {
       "court": "Court 5",
@@ -206,7 +218,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Asteris D",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2112143,
@@ -1519,7 +1531,7 @@
         "Court 5"
       ],
       "playerName": "Asteris D",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2182202,
@@ -1532,7 +1544,7 @@
         "Court 8"
       ],
       "playerName": "Asteris D",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2148647,
@@ -3157,7 +3169,7 @@
         "Court 5"
       ],
       "playerName": "Ishaan G",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2182214,
@@ -3690,6 +3702,57 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Michael D",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2290654,
+      "title": "Social Open Play | Intermediate - Advanced | Sunday",
+      "startTime": "2026-09-27T18:00:00",
+      "endTime": "2026-09-27T20:00:00",
+      "courts": [
+        "Court 12 (Livestreaming)",
+        "Court 11",
+        "Court 9",
+        "Court 10 (Livestreaming)",
+        "Court 8",
+        "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Jay K",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2289886,
+      "title": "SUMMER | Open Play | Advanced Beginner - Intermediate | Saturday",
+      "startTime": "2026-09-26T15:00:00",
+      "endTime": "2026-09-26T18:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Tom Z",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2289886,
+      "title": "SUMMER | Open Play | Advanced Beginner - Intermediate | Saturday",
+      "startTime": "2026-09-26T15:00:00",
+      "endTime": "2026-09-26T18:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Peiyi X",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2201262,
+      "title": "3.5-4.0 Gated Open Play | Sunday | 9am-11am",
+      "startTime": "2026-09-27T09:00:00",
+      "endTime": "2026-09-27T11:00:00",
+      "courts": [
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Andrew W",
       "checkedIn": false
     }
   ]
