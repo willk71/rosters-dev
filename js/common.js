@@ -178,45 +178,48 @@ function cleanTitle(rawTitle) {
 }
 
 function resolveQueueLocation(courtsSet, customText) {
-  if (customText) return customText;
-  if (!courtsSet || courtsSet.size === 0) return '';
+  let location = '';
 
-  const nums = Array.from(courtsSet).map(n => parseInt(n, 10)).filter(n => !isNaN(n));
-  if (nums.length === 0) return '';
+  if (customText) {
+    location = customText;
+  } else if (courtsSet && courtsSet.size > 0) {
+    const nums = Array.from(courtsSet).map(n => parseInt(n, 10)).filter(n => !isNaN(n));
 
-  // 1, 2, 4, * groupings route to Court 1 Paddle Rack
-  if (courtsSet.has('1') && courtsSet.has('2') && courtsSet.has('4')) {
-    return 'queue at Court 1 Paddle Rack';
+    if (nums.length > 0) {
+      // Priority 1: 1, 2, 4, * groupings route to Court 1 Paddle Rack
+      if (courtsSet.has('1') && courtsSet.has('2') && courtsSet.has('4')) {
+        location = 'queue at Court 1 Paddle Rack';
+      }
+      // Priority 2: Exact single court assignment for 1, 3, 6, 7, 9, 10, 11, 12 -> "Court X Table"
+      else if (nums.length === 1 && [1, 3, 6, 7, 9, 10, 11, 12].includes(nums[0])) {
+        location = `queue at Court ${nums[0]} Table`;
+      }
+      // Priority 3: Groups containing Court 4 & 5 or falling in Courts 4 - 6
+      else if ((courtsSet.has('4') && courtsSet.has('5')) || nums.some(n => n >= 4 && n <= 6)) {
+        location = 'queue at Court 4 Table';
+      }
+      // Priority 4: Groups containing Court 7 / Courts 7 - 9
+      else if (courtsSet.has('7') || nums.some(n => n >= 7 && n <= 9)) {
+        location = 'queue at Court 7 paddle rack';
+      }
+      // Priority 5: Courts 1 - 3
+      else if (nums.some(n => n >= 1 && n <= 3)) {
+        location = 'queue at Court 1 paddle rack';
+      }
+      // Priority 6: Courts 10+
+      else if (nums.some(n => n >= 10)) {
+        location = 'queue at Court 10 paddle rack';
+      } else {
+        const minCourt = Math.min(...nums);
+        location = `queue at Court ${minCourt} paddle rack`;
+      }
+    }
   }
 
-  // Exact single court assignment for 1, 3, 6, 7, 9, 10, 11, 12 -> "Court X Table"
-  const singleCourtTableList = [1, 3, 6, 7, 9, 10, 11, 12];
-  if (nums.length === 1 && singleCourtTableList.includes(nums[0])) {
-    return `queue at Court ${nums[0]} Table`;
-  }
+  if (!location) return '';
 
-  // Groups containing Court 4 & 5 or falling in Courts 4 - 6
-  if ((courtsSet.has('4') && courtsSet.has('5')) || nums.some(n => n >= 4 && n <= 6)) {
-    return 'queue at Court 4 Table';
-  }
-
-  // Groups containing Court 7 / Courts 7 - 9
-  if (courtsSet.has('7') || nums.some(n => n >= 7 && n <= 9)) {
-    return 'queue at Court 7 paddle rack';
-  }
-
-  // Courts 1 - 3
-  if (nums.some(n => n >= 1 && n <= 3)) {
-    return 'queue at Court 1 paddle rack';
-  }
-
-  // Courts 10+
-  if (nums.some(n => n >= 10)) {
-    return 'queue at Court 10 paddle rack';
-  }
-
-  const minCourt = Math.min(...nums);
-  return `queue at Court ${minCourt} paddle rack`;
+  const cleanLoc = location.replace(/^📍\s*[-–—]?\s*/i, '').trim();
+  return `📍- ${cleanLoc}`;
 }
 
 function formatTime(isoString, isEndTime = false) {
