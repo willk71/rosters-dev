@@ -8,12 +8,17 @@
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/index.css" />
   <style>
-    /* Enforce 2-column layout for 5-6 events to avoid text cutoff */
+    /* Enforce 2-column, 3-row layout for 5-6 events */
     #session-container.count-5,
     #session-container.count-6 {
       display: grid !important;
       grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-rows: repeat(3, 1fr) !important;
       gap: 1.5rem !important;
+    }
+
+    #session-container.count-5 .session-card:last-child {
+      grid-column: span 1 !important;
     }
 
     .session-queue {
