@@ -129,12 +129,12 @@ header {
 }
 
 main {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   display: grid;
   gap: 1.6vh 1.6vw;
-  margin-top: 1.8vh;
+  margin-top: 1.4vh;
   overflow: hidden;
-  min-height: 0;
 }
 
 /* --- INDEX 2-COL MAX GRID --- */
@@ -227,16 +227,15 @@ body.page-rosters main.count-6 { grid-template-columns: 1fr 1fr 1fr; grid-templa
 
 /* Court Host Bar */
 .court-host-bar {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 1.2vw;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--card-border-active);
-  border-radius: 14px;
-  padding: 0.9vh 2vw;
-  margin-top: 1.2vh;
-  margin-bottom: 0.4vh;
+  border-radius: 12px;
+  padding: 0.8vh 1.8vw;
+  margin: 0.8vh 0;
   flex-shrink: 0;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
