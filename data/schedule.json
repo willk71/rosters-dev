@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-09-28T21:34:31Z",
+  "lastUpdated": "2026-09-28T21:41:36Z",
   "date": "2026-09-28",
   "courtHosts": [
+    {
+      "start": "19:00",
+      "end": "23:30",
+      "host": "Neil L"
+    },
     {
       "start": "18:15",
       "end": "20:45",
@@ -11,11 +16,6 @@
       "start": "15:00",
       "end": "19:30",
       "host": "Will K"
-    },
-    {
-      "start": "19:00",
-      "end": "23:30",
-      "host": "Neil L"
     }
   ],
   "courtOverrides": [],
@@ -44,6 +44,12 @@
       "holderLabel": "",
       "startTime": "2026-09-28T13:00:00",
       "endTime": "2026-09-28T14:00:00"
+    },
+    {
+      "court": "Court 3",
+      "holderLabel": "",
+      "startTime": "2026-09-28T22:00:00",
+      "endTime": "2026-09-28T23:00:00"
     }
   ],
   "events": [
@@ -211,7 +217,7 @@
         "Court 6"
       ],
       "playerName": "Rivkah B",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2160553,
@@ -704,7 +710,7 @@
         "Court 8"
       ],
       "playerName": "Karl H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2160553,
@@ -1760,7 +1766,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Andrew B",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257680,
@@ -2206,7 +2212,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Andy H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257689,
@@ -2256,7 +2262,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Andrew C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257709,
@@ -2344,7 +2350,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Adam S",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257689,
@@ -2520,7 +2526,7 @@
         "Court 8"
       ],
       "playerName": "Karl H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2281677,
@@ -2637,7 +2643,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Jonathan Z",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2270006,
