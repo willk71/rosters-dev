@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-09-29T02:02:06Z",
+  "lastUpdated": "2026-09-29T02:02:58Z",
   "date": "2026-09-28",
   "courtHosts": [
+    {
+      "start": "15:00",
+      "end": "19:30",
+      "host": "Will K"
+    },
     {
       "start": "18:15",
       "end": "20:45",
@@ -11,11 +16,6 @@
       "start": "19:00",
       "end": "23:30",
       "host": "Neil L"
-    },
-    {
-      "start": "15:00",
-      "end": "19:30",
-      "host": "Will K"
     }
   ],
   "courtOverrides": [],
@@ -2360,6 +2360,18 @@
       "checkedIn": true
     },
     {
+      "eventId": 2270006,
+      "title": "Women's 3.25+ Strategic Open Play",
+      "startTime": "2026-09-29T18:00:00",
+      "endTime": "2026-09-29T20:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Sandi H",
+      "checkedIn": true
+    },
+    {
       "eventId": 2257655,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-09-29T18:00:00",
@@ -3193,18 +3205,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2281699,
-      "title": "3.75-4.25 Open Play",
-      "startTime": "2026-09-30T19:30:00",
-      "endTime": "2026-09-30T21:30:00",
-      "courts": [
-        "Court 1 (Livestreaming)",
-        "Court 2"
-      ],
-      "playerName": "Mingyi L",
-      "checkedIn": false
-    },
-    {
       "eventId": 2281677,
       "title": "3.25-3.75 Open Play",
       "startTime": "2026-09-28T17:30:00",
@@ -3790,23 +3790,23 @@
       "checkedIn": true
     },
     {
-      "eventId": 2291666,
-      "title": "IPX Club Rating Assessments",
-      "startTime": "2026-09-28T19:30:00",
-      "endTime": "2026-09-28T21:30:00",
-      "courts": [
-        "Court 13"
-      ],
-      "playerName": "Chirag J",
-      "checkedIn": true
-    },
-    {
       "eventId": 2291506,
       "title": "IPX Club Rating Assessments",
       "startTime": "2026-09-28T17:30:00",
       "endTime": "2026-09-28T19:30:00",
       "courts": [
         "Court 4 (Livestreaming)"
+      ],
+      "playerName": "Chirag J",
+      "checkedIn": true
+    },
+    {
+      "eventId": 2291666,
+      "title": "IPX Club Rating Assessments",
+      "startTime": "2026-09-28T19:30:00",
+      "endTime": "2026-09-28T21:30:00",
+      "courts": [
+        "Court 13"
       ],
       "playerName": "Chirag J",
       "checkedIn": true
@@ -3847,6 +3847,18 @@
       ],
       "playerName": "Quang T",
       "checkedIn": true
+    },
+    {
+      "eventId": 2281699,
+      "title": "3.75-4.25 Open Play",
+      "startTime": "2026-09-30T19:30:00",
+      "endTime": "2026-09-30T21:30:00",
+      "courts": [
+        "Court 1 (Livestreaming)",
+        "Court 2"
+      ],
+      "playerName": "Mingyi L",
+      "checkedIn": false
     },
     {
       "eventId": 2109596,
@@ -4179,6 +4191,18 @@
       ],
       "playerName": "Hyeonjae P",
       "checkedIn": false
+    },
+    {
+      "eventId": 2270006,
+      "title": "Women's 3.25+ Strategic Open Play",
+      "startTime": "2026-09-29T18:00:00",
+      "endTime": "2026-09-29T20:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Florence C",
+      "checkedIn": true
     }
   ]
 }
