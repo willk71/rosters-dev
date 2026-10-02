@@ -1,26 +1,11 @@
 {
-  "lastUpdated": "2026-10-02T04:24:08Z",
+  "lastUpdated": "2026-10-02T04:44:31Z",
   "date": "2026-10-02",
   "courtHosts": [
     {
       "start": "19:00",
       "end": "23:00",
       "host": "Winnie Z"
-    },
-    {
-      "start": "15:00",
-      "end": "21:00",
-      "host": "Will K"
-    },
-    {
-      "start": "17:30",
-      "end": "21:45",
-      "host": "Nelson C"
-    },
-    {
-      "start": "14:30",
-      "end": "18:00",
-      "host": "Lillian H"
     },
     {
       "start": "19:00",
@@ -31,6 +16,21 @@
       "start": "17:30",
       "end": "21:45",
       "host": "Wendy X"
+    },
+    {
+      "start": "14:30",
+      "end": "18:00",
+      "host": "Lillian H"
+    },
+    {
+      "start": "17:30",
+      "end": "21:45",
+      "host": "Nelson C"
+    },
+    {
+      "start": "15:00",
+      "end": "21:00",
+      "host": "Will K"
     }
   ],
   "courtOverrides": [],
@@ -782,6 +782,18 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Jacklyn W",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2218483,
+      "title": "Advanced Beginner - Intermediate Open Play | Saturday",
+      "startTime": "2026-10-03T18:00:00",
+      "endTime": "2026-10-03T21:00:00",
+      "courts": [
+        "Court 3",
+        "Court 2"
+      ],
+      "playerName": "Jared B",
       "checkedIn": false
     },
     {
@@ -3508,6 +3520,18 @@
       "checkedIn": false
     },
     {
+      "eventId": 2300200,
+      "title": "3.25-3.75 Open Play",
+      "startTime": "2026-10-02T17:30:00",
+      "endTime": "2026-10-02T19:30:00",
+      "courts": [
+        "Court 11",
+        "Court 10 (Livestreaming)"
+      ],
+      "playerName": "Onson L",
+      "checkedIn": false
+    },
+    {
       "eventId": 2266510,
       "title": "3.75-4.25 Open Play",
       "startTime": "2026-10-01T20:00:00",
@@ -4668,18 +4692,6 @@
         "Court 2"
       ],
       "playerName": "Stephen L",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2218483,
-      "title": "Advanced Beginner - Intermediate Open Play | Saturday",
-      "startTime": "2026-10-03T18:00:00",
-      "endTime": "2026-10-03T21:00:00",
-      "courts": [
-        "Court 3",
-        "Court 2"
-      ],
-      "playerName": "Jared B",
       "checkedIn": false
     }
   ]
