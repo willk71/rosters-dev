@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-10-04T02:29:41Z",
+  "lastUpdated": "2026-10-04T02:30:36Z",
   "date": "2026-10-03",
   "courtHosts": [
+    {
+      "start": "18:00",
+      "end": "22:30",
+      "host": "Winnie Z"
+    },
     {
       "start": "14:30",
       "end": "18:30",
@@ -16,11 +21,6 @@
       "start": "18:00",
       "end": "21:15",
       "host": "Shiela B"
-    },
-    {
-      "start": "18:00",
-      "end": "22:30",
-      "host": "Winnie Z"
     }
   ],
   "courtOverrides": [],
@@ -2229,19 +2229,6 @@
       "checkedIn": true
     },
     {
-      "eventId": 2218483,
-      "title": "Advanced Beginner - Intermediate Open Play | Saturday",
-      "startTime": "2026-10-03T18:00:00",
-      "endTime": "2026-10-03T21:00:00",
-      "courts": [
-        "Court 6",
-        "Court 1 (Livestreaming)",
-        "Court 2"
-      ],
-      "playerName": "William T",
-      "checkedIn": true
-    },
-    {
       "eventId": 2218468,
       "title": "Intermediate - Advanced Open Play | Saturday",
       "startTime": "2026-10-03T18:00:00",
@@ -2307,6 +2294,19 @@
         "Court 8"
       ],
       "playerName": "Michael S",
+      "checkedIn": true
+    },
+    {
+      "eventId": 2218483,
+      "title": "Advanced Beginner - Intermediate Open Play | Saturday",
+      "startTime": "2026-10-03T18:00:00",
+      "endTime": "2026-10-03T21:00:00",
+      "courts": [
+        "Court 6",
+        "Court 1 (Livestreaming)",
+        "Court 2"
+      ],
+      "playerName": "William T",
       "checkedIn": true
     },
     {
@@ -2535,31 +2535,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2218487,
-      "title": "Advanced Beginner - Intermediate Open Play | Saturday",
-      "startTime": "2026-10-03T21:00:00",
-      "endTime": "2026-10-03T23:59:00",
-      "courts": [
-        "Court 2",
-        "Court 1 (Livestreaming)"
-      ],
-      "playerName": "Brian A",
-      "checkedIn": true
-    },
-    {
-      "eventId": 2220593,
-      "title": "Morning Mixer",
-      "startTime": "2026-10-05T07:00:00",
-      "endTime": "2026-10-05T09:00:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 7 (Livestreaming)",
-        "Court 8"
-      ],
-      "playerName": "Richard D",
-      "checkedIn": false
-    },
-    {
       "eventId": 2218468,
       "title": "Intermediate - Advanced Open Play | Saturday",
       "startTime": "2026-10-03T18:00:00",
@@ -2626,6 +2601,31 @@
       ],
       "playerName": "Tony L",
       "checkedIn": true
+    },
+    {
+      "eventId": 2218487,
+      "title": "Advanced Beginner - Intermediate Open Play | Saturday",
+      "startTime": "2026-10-03T21:00:00",
+      "endTime": "2026-10-03T23:59:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Brian A",
+      "checkedIn": true
+    },
+    {
+      "eventId": 2220593,
+      "title": "Morning Mixer",
+      "startTime": "2026-10-05T07:00:00",
+      "endTime": "2026-10-05T09:00:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
+        "Court 7 (Livestreaming)",
+        "Court 8"
+      ],
+      "playerName": "Richard D",
+      "checkedIn": false
     },
     {
       "eventId": 2218473,
