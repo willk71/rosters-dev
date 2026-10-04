@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPX Court Host ID Badge</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #eef2f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 30px 10px;
+    }
+
+    .badge-container {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Standard CR80 Credit Card Proportions (approx 1:1.58) */
+    .badge {
+      width: 255px;
+      height: 405px;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+      border: 1px solid #dbe2ea;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 18px;
+      position: relative;
+    }
+
+    /* Horizontal slot punch centered at top edge */
+    .slot-punch {
+      width: 54px;
+      height: 9px;
+      background: #e2e8f0;
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      margin-bottom: 14px;
+    }
+
+    /* Logo Recreation */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 22px;
+      height: 52px;
+    }
+
+    .logo-text {
+      text-align: right;
+    }
+
+    .logo-text .sub {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #64748b;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .logo-text .main {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #334155;
+      line-height: 1;
+    }
+
+    .logo-mark {
+      position: relative;
+      width: 44px;
+      height: 44px;
+    }
+
+    .pickleball {
+      width: 17px;
+      height: 17px;
+      background: #8fa85b;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .pickleball-hole {
+      width: 2px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    .orbit-x {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 3.5px solid transparent;
+      border-top-color: #5b58a6;
+      border-right-color: #5b58a6;
+      transform: rotate(38deg);
+      top: 0;
+      left: 2px;
+    }
+
+    .x-arm {
+      position: absolute;
+      width: 16px;
+      height: 3.5px;
+      background: #94a3b8;
+      border-radius: 2px;
+      top: 24px;
+      right: 4px;
+      transform: rotate(45deg);
+    }
+
+    /* Front Typography */
+    .host-name {
+      font-size: 38px;
+      font-weight: 900;
+      color: #1e293b;
+      letter-spacing: 1.5px;
+      margin-top: 14px;
+      text-transform: uppercase;
+    }
+
+    .host-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #5b58a6;
+      letter-spacing: 2px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .ask-btn {
+      margin-top: auto;
+      margin-bottom: 12px;
+      background: #8fa85b;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 10px 0;
+      width: 90%;
+      text-align: center;
+      border-radius: 24px;
+      box-shadow: 0 3px 8px rgba(143, 168, 91, 0.35);
+    }
+
+    /* Back Card Styles */
+    .back-header {
+      font-size: 15px;
+      font-weight: 800;
+      color: #5b58a6;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .back-contact {
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .divider {
+      width: 80%;
+      height: 1px;
+      background: #e2e8f0;
+      margin: 12px 0;
+    }
+
+    .qr-box {
+      width: 130px;
+      height: 130px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 4px 0 12px 0;
+      padding: 10px;
+    }
+
+    .qr-box svg {
+      width: 82px;
+      height: 82px;
+      fill: #1e293b;
+    }
+
+    .qr-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #5b58a6;
+      text-transform: uppercase;
+    }
+
+    .back-footer-main {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #1e293b;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .back-footer-sub {
+      font-size: 9px;
+      font-weight: 600;
+      color: #8fa85b;
+      margin-top: 2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="badge-container">
+    <!-- FRONT -->
+    <div class="badge">
+      <div class="slot-punch"></div>
+      
+      <div class="logo-wrap">
+        <div class="logo-text">
+          <div class="sub">INDOOR</div>
+          <div class="main">PICKLEBALL</div>
+        </div>
+        <div class="logo-mark">
+          <div class="pickleball">
+            <div class="pickleball-hole"></div>
+            <div class="pickleball-hole"></div>
+            <div class="pickleball-hole"></div>
+            <div class="pickleball-hole"></div>
+          </div>
+          <div class="orbit-x"></div>
+          <div class="x-arm"></div>
+        </div>
+      </div>
+
+      <div class="host-name">WILL</div>
+      <div class="host-title">COURT HOST</div>
+      <div class="ask-btn">ASK ME</div>
+    </div>
+
+    <!-- BACK -->
+    <div class="badge">
+      <div class="slot-punch"></div>
+
+      <div class="back-header">IPX SUPPORT</div>
+      <div class="back-contact">
+        Desk: (XXX) XXX-XXXX<br>
+        hello@ipxpickleball.com
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="qr-box">
+        <!-- Generic QR Mockup Icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h2v2h-2v-2zm-4 0h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 0h2v2h-2v-2zm6-4h2v6h-2v-6zm-6-2h4v2h-4v-2z"/>
+        </svg>
+        <span class="qr-label">WHATSAPP QR</span>
+      </div>
+
+      <div class="back-footer-main">SCAN TO JOIN COMMUNITY</div>
+      <div class="back-footer-sub">IPX COMMUNITY CHAT</div>
+    </div>
+  </div>
+
+</body>
+</html>
