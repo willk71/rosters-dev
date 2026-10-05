@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-10-05T09:17:19Z",
+  "lastUpdated": "2026-10-05T09:18:12Z",
   "date": "2026-10-05",
   "courtHosts": [
+    {
+      "start": "09:00",
+      "end": "17:00",
+      "host": "Lillian H"
+    },
+    {
+      "start": "16:00",
+      "end": "19:45",
+      "host": "Wendy X"
+    },
     {
       "start": "19:00",
       "end": "23:00",
@@ -10,17 +20,7 @@
     {
       "start": "16:00",
       "end": "19:45",
-      "host": "Wendy X"
-    },
-    {
-      "start": "16:00",
-      "end": "19:45",
       "host": "Nelson C"
-    },
-    {
-      "start": "09:00",
-      "end": "17:00",
-      "host": "Lillian H"
     }
   ],
   "courtOverrides": [],
@@ -2217,19 +2217,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2220593,
-      "title": "Morning Mixer",
-      "startTime": "2026-10-05T07:00:00",
-      "endTime": "2026-10-05T09:00:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 7 (Livestreaming)",
-        "Court 8"
-      ],
-      "playerName": "Toshi T",
-      "checkedIn": false
-    },
-    {
       "eventId": 2109596,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-05T21:30:00",
@@ -2240,6 +2227,19 @@
         "Court 9"
       ],
       "playerName": "Jack B",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2162309,
+      "title": "3.75-4.25 Open Play",
+      "startTime": "2026-10-05T19:30:00",
+      "endTime": "2026-10-05T21:30:00",
+      "courts": [
+        "Court 2",
+        "Court 5",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Candace J",
       "checkedIn": false
     },
     {
@@ -2266,19 +2266,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2162309,
-      "title": "3.75-4.25 Open Play",
-      "startTime": "2026-10-05T19:30:00",
-      "endTime": "2026-10-05T21:30:00",
-      "courts": [
-        "Court 2",
-        "Court 5",
-        "Court 1 (Livestreaming)"
-      ],
-      "playerName": "Candace J",
-      "checkedIn": false
-    },
-    {
       "eventId": 2196165,
       "title": "3.25-3.75 Gated Open Play",
       "startTime": "2026-10-05T19:30:00",
@@ -2299,6 +2286,19 @@
         "Court 7 (Livestreaming)"
       ],
       "playerName": "Rickie B",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2220593,
+      "title": "Morning Mixer",
+      "startTime": "2026-10-05T07:00:00",
+      "endTime": "2026-10-05T09:00:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
+        "Court 7 (Livestreaming)",
+        "Court 8"
+      ],
+      "playerName": "Toshi T",
       "checkedIn": false
     },
     {
