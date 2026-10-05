@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T21:37:12Z",
+  "lastUpdated": "2026-10-05T21:53:19Z",
   "date": "2026-10-05",
   "courtHosts": [
     {
@@ -8,14 +8,14 @@
       "host": "Stephanie L"
     },
     {
-      "start": "09:00",
-      "end": "17:00",
-      "host": "Lillian H"
-    },
-    {
       "start": "16:00",
       "end": "19:45",
       "host": "Wendy X"
+    },
+    {
+      "start": "09:00",
+      "end": "17:00",
+      "host": "Lillian H"
     },
     {
       "start": "16:00",
@@ -67,6 +67,12 @@
       "holderLabel": "",
       "startTime": "2026-10-05T22:00:00",
       "endTime": "2026-10-05T23:00:00"
+    },
+    {
+      "court": "Court 13",
+      "holderLabel": "",
+      "startTime": "2026-10-05T18:00:00",
+      "endTime": "2026-10-05T19:00:00"
     }
   ],
   "events": [
@@ -245,7 +251,7 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "JP D",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2162308,
@@ -494,7 +500,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Andrew K",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2196165,
@@ -724,7 +730,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "YuYi H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2162309,
@@ -737,7 +743,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Nick W",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2196165,
@@ -802,19 +808,7 @@
         "Court 9"
       ],
       "playerName": "Patrick T",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2196165,
-      "title": "3.25-3.75 Gated Open Play",
-      "startTime": "2026-10-05T19:30:00",
-      "endTime": "2026-10-05T21:30:00",
-      "courts": [
-        "Court 12 (Livestreaming)",
-        "Court 10 (Livestreaming)"
-      ],
-      "playerName": "Jonathan Z",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2196165,
@@ -839,6 +833,18 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Wright L",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2196151,
+      "title": "3.5-4.0 Gated Open Play",
+      "startTime": "2026-10-05T21:30:00",
+      "endTime": "2026-10-05T23:59:00",
+      "courts": [
+        "Court 12 (Livestreaming)",
+        "Court 11"
+      ],
+      "playerName": "Chirag J",
       "checkedIn": false
     },
     {
@@ -926,19 +932,6 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "Zayd A",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2257655,
-      "title": "3.5-4.0 Open Play",
-      "startTime": "2026-10-06T18:00:00",
-      "endTime": "2026-10-06T20:00:00",
-      "courts": [
-        "Court 5",
-        "Court 3",
-        "Court 4 (Livestreaming)"
-      ],
-      "playerName": "Minhdiep V",
       "checkedIn": false
     },
     {
@@ -1129,6 +1122,19 @@
         "Court 3",
         "Court 4 (Livestreaming)"
       ],
+      "playerName": "Chok L",
+      "checkedIn": true
+    },
+    {
+      "eventId": 2257655,
+      "title": "3.5-4.0 Open Play",
+      "startTime": "2026-10-06T18:00:00",
+      "endTime": "2026-10-06T20:00:00",
+      "courts": [
+        "Court 5",
+        "Court 3",
+        "Court 4 (Livestreaming)"
+      ],
       "playerName": "Jordi F",
       "checkedIn": false
     },
@@ -1143,19 +1149,6 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Alvin D",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2257689,
-      "title": "3.5-4.0 Gated Open Play",
-      "startTime": "2026-10-06T18:00:00",
-      "endTime": "2026-10-06T20:00:00",
-      "courts": [
-        "Court 11",
-        "Court 10 (Livestreaming)",
-        "Court 8"
-      ],
-      "playerName": "Darren H",
       "checkedIn": false
     },
     {
@@ -1319,6 +1312,19 @@
       "checkedIn": false
     },
     {
+      "eventId": 2220809,
+      "title": "Morning Brew Drill & Social",
+      "startTime": "2026-10-06T09:00:00",
+      "endTime": "2026-10-06T11:00:00",
+      "courts": [
+        "Court 8",
+        "Court 10 (Livestreaming)",
+        "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Katie P",
+      "checkedIn": false
+    },
+    {
       "eventId": 2257655,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-06T18:00:00",
@@ -1329,7 +1335,7 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "YuYi H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2220793,
@@ -1481,7 +1487,7 @@
         "Court 7 (Livestreaming)"
       ],
       "playerName": "Patrick T",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257655,
@@ -1541,24 +1547,24 @@
       "checkedIn": false
     },
     {
+      "eventId": 2196165,
+      "title": "3.25-3.75 Gated Open Play",
+      "startTime": "2026-10-05T19:30:00",
+      "endTime": "2026-10-05T21:30:00",
+      "courts": [
+        "Court 12 (Livestreaming)",
+        "Court 10 (Livestreaming)"
+      ],
+      "playerName": "Jonathan Z",
+      "checkedIn": false
+    },
+    {
       "eventId": 2257680,
       "title": "3.25+ Open Play",
       "startTime": "2026-10-06T18:00:00",
       "endTime": "2026-10-06T20:00:00",
       "courts": [
         "Court 7 (Livestreaming)"
-      ],
-      "playerName": "Wilson L",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2257702,
-      "title": "3.25+ Open Play",
-      "startTime": "2026-10-06T20:00:00",
-      "endTime": "2026-10-06T22:00:00",
-      "courts": [
-        "Court 2",
-        "Court 1 (Livestreaming)"
       ],
       "playerName": "Wilson L",
       "checkedIn": false
@@ -1685,7 +1691,7 @@
         "Court 2"
       ],
       "playerName": "Andrew K",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2281677,
@@ -1735,6 +1741,18 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "Zayd A",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2257702,
+      "title": "3.25+ Open Play",
+      "startTime": "2026-10-06T20:00:00",
+      "endTime": "2026-10-06T22:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Minhdiep V",
       "checkedIn": false
     },
     {
@@ -1871,7 +1889,7 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "Chok L",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257702,
@@ -1883,6 +1901,19 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Jordi F",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2257689,
+      "title": "3.5-4.0 Gated Open Play",
+      "startTime": "2026-10-06T18:00:00",
+      "endTime": "2026-10-06T20:00:00",
+      "courts": [
+        "Court 11",
+        "Court 10 (Livestreaming)",
+        "Court 8"
+      ],
+      "playerName": "Darren H",
       "checkedIn": false
     },
     {
@@ -2113,7 +2144,7 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "YuYi H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257718,
@@ -2163,7 +2194,7 @@
         "Court 2"
       ],
       "playerName": "Nick W",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257718,
@@ -2353,7 +2384,7 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Patrick T",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2281677,
@@ -2366,7 +2397,7 @@
         "Court 9"
       ],
       "playerName": "Patrick T",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257718,
@@ -2480,6 +2511,18 @@
       ],
       "playerName": "Will L",
       "checkedIn": true
+    },
+    {
+      "eventId": 2257702,
+      "title": "3.25+ Open Play",
+      "startTime": "2026-10-06T20:00:00",
+      "endTime": "2026-10-06T22:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Wilson L",
+      "checkedIn": false
     },
     {
       "eventId": 2257702,
@@ -2629,7 +2672,7 @@
         "Court 9"
       ],
       "playerName": "Jai W",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2257709,
@@ -2689,7 +2732,7 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "JP D",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2281674,
