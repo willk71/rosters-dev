@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-10-05T22:42:14Z",
+  "lastUpdated": "2026-10-05T22:43:06Z",
   "date": "2026-10-05",
   "courtHosts": [
+    {
+      "start": "09:00",
+      "end": "17:00",
+      "host": "Lillian H"
+    },
     {
       "start": "19:00",
       "end": "23:00",
@@ -16,11 +21,6 @@
       "start": "16:00",
       "end": "19:45",
       "host": "Nelson C"
-    },
-    {
-      "start": "09:00",
-      "end": "17:00",
-      "host": "Lillian H"
     }
   ],
   "courtOverrides": [],
@@ -666,7 +666,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Sandi H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2196151,
@@ -2915,7 +2915,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Jeff S",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2270006,
