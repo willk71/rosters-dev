@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T22:15:03Z",
+  "lastUpdated": "2026-10-06T22:15:56Z",
   "date": "2026-10-06",
   "courtHosts": [
     {
@@ -70,6 +70,12 @@
       "holderLabel": "",
       "startTime": "2026-10-07T14:00:00",
       "endTime": "2026-10-07T15:00:00"
+    },
+    {
+      "court": "Court 12 (Livestreaming)",
+      "holderLabel": "",
+      "startTime": "2026-10-07T17:00:00",
+      "endTime": "2026-10-07T18:00:00"
     }
   ],
   "events": [
@@ -2479,19 +2485,6 @@
       "checkedIn": true
     },
     {
-      "eventId": 2281284,
-      "title": "3.25+ Open Play",
-      "startTime": "2026-10-07T17:30:00",
-      "endTime": "2026-10-07T19:30:00",
-      "courts": [
-        "Court 6",
-        "Court 5",
-        "Court 3"
-      ],
-      "playerName": "Jacky C",
-      "checkedIn": false
-    },
-    {
       "eventId": 2257718,
       "title": "3.5-4.0 Gated Open Play",
       "startTime": "2026-10-06T20:00:00",
@@ -2555,18 +2548,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2281721,
-      "title": "3.25+ Open Play",
-      "startTime": "2026-10-07T19:30:00",
-      "endTime": "2026-10-07T21:30:00",
-      "courts": [
-        "Court 3",
-        "Court 6"
-      ],
-      "playerName": "Raymond C",
-      "checkedIn": false
-    },
-    {
       "eventId": 2257709,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-06T20:00:00",
@@ -2576,6 +2557,18 @@
         "Court 11",
         "Court 10 (Livestreaming)",
         "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Raymond C",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2281721,
+      "title": "3.25+ Open Play",
+      "startTime": "2026-10-07T19:30:00",
+      "endTime": "2026-10-07T21:30:00",
+      "courts": [
+        "Court 3",
+        "Court 6"
       ],
       "playerName": "Raymond C",
       "checkedIn": false
