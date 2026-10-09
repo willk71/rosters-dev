@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-10-09T14:50:58Z",
+  "lastUpdated": "2026-10-09T14:51:52Z",
   "date": "2026-10-09",
   "courtHosts": [
-    {
-      "start": "18:00",
-      "end": "21:45",
-      "host": "Wendy X"
-    },
-    {
-      "start": "19:00",
-      "end": "23:00",
-      "host": "Stephanie L"
-    },
     {
       "start": "18:00",
       "end": "21:45",
@@ -21,6 +11,16 @@
       "start": "15:30",
       "end": "21:00",
       "host": "Lillian H"
+    },
+    {
+      "start": "19:00",
+      "end": "23:00",
+      "host": "Stephanie L"
+    },
+    {
+      "start": "18:00",
+      "end": "21:45",
+      "host": "Wendy X"
     }
   ],
   "courtOverrides": [],
@@ -1213,6 +1213,19 @@
       "checkedIn": false
     },
     {
+      "eventId": 2118712,
+      "title": "Advanced Beginner+ Open Play",
+      "startTime": "2026-10-09T21:30:00",
+      "endTime": "2026-10-09T23:59:00",
+      "courts": [
+        "Court 2",
+        "Court 5",
+        "Court 4 (Livestreaming)"
+      ],
+      "playerName": "Kenny T",
+      "checkedIn": false
+    },
+    {
       "eventId": 2118949,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-09T19:30:00",
@@ -1633,18 +1646,6 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Jarrett W",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2182231,
-      "title": "SUMMER | Open Play | Advanced Beginner - Intermediate | Saturday",
-      "startTime": "2026-10-10T21:00:00",
-      "endTime": "2026-10-10T23:59:00",
-      "courts": [
-        "Court 1 (Livestreaming)",
-        "Court 2"
-      ],
-      "playerName": "Bea I",
       "checkedIn": false
     },
     {
@@ -2149,6 +2150,18 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Jerry H",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2182231,
+      "title": "SUMMER | Open Play | Advanced Beginner - Intermediate | Saturday",
+      "startTime": "2026-10-10T21:00:00",
+      "endTime": "2026-10-10T23:59:00",
+      "courts": [
+        "Court 1 (Livestreaming)",
+        "Court 2"
+      ],
+      "playerName": "Bea I",
       "checkedIn": false
     },
     {
