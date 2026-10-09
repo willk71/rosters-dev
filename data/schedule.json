@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-10-09T14:51:52Z",
+  "lastUpdated": "2026-10-09T15:14:26Z",
   "date": "2026-10-09",
   "courtHosts": [
-    {
-      "start": "18:00",
-      "end": "21:45",
-      "host": "Nelson"
-    },
-    {
-      "start": "15:30",
-      "end": "21:00",
-      "host": "Lillian H"
-    },
     {
       "start": "19:00",
       "end": "23:00",
@@ -21,6 +11,16 @@
       "start": "18:00",
       "end": "21:45",
       "host": "Wendy X"
+    },
+    {
+      "start": "15:30",
+      "end": "21:00",
+      "host": "Lillian H"
+    },
+    {
+      "start": "18:00",
+      "end": "21:45",
+      "host": "Nelson"
     }
   ],
   "courtOverrides": [],
@@ -360,7 +360,7 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "Elaine R",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2127713,
@@ -420,7 +420,7 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "Maria P",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2220878,
@@ -515,7 +515,7 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "Nicole P",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2118694,
@@ -1023,19 +1023,6 @@
         "Court 11",
         "Court 10 (Livestreaming)"
       ],
-      "playerName": "Earl B",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2199540,
-      "title": "3.5-4.0 Gated Open Play",
-      "startTime": "2026-10-09T19:30:00",
-      "endTime": "2026-10-09T21:30:00",
-      "courts": [
-        "Court 12 (Livestreaming)",
-        "Court 11",
-        "Court 10 (Livestreaming)"
-      ],
       "playerName": "Paola F",
       "checkedIn": false
     },
@@ -1331,6 +1318,19 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Monica T",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2118712,
+      "title": "Advanced Beginner+ Open Play",
+      "startTime": "2026-10-09T21:30:00",
+      "endTime": "2026-10-09T23:59:00",
+      "courts": [
+        "Court 2",
+        "Court 5",
+        "Court 4 (Livestreaming)"
+      ],
+      "playerName": "Raymond C",
       "checkedIn": false
     },
     {
@@ -2053,6 +2053,19 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Christopher G",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2268293,
+      "title": "Open Play (Int-Adv)",
+      "startTime": "2026-10-09T15:30:00",
+      "endTime": "2026-10-09T17:30:00",
+      "courts": [
+        "Court 12 (Livestreaming)",
+        "Court 7 (Livestreaming)",
+        "Court 10 (Livestreaming)"
+      ],
+      "playerName": "Hiroshi M",
       "checkedIn": false
     },
     {
