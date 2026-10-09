@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T21:00:41Z",
+  "lastUpdated": "2026-10-09T21:19:10Z",
   "date": "2026-10-09",
   "courtHosts": [
     {
@@ -10,17 +10,17 @@
     {
       "start": "18:00",
       "end": "21:45",
+      "host": "Nelson"
+    },
+    {
+      "start": "18:00",
+      "end": "21:45",
       "host": "Wendy X"
     },
     {
       "start": "15:30",
       "end": "21:00",
       "host": "Lillian H"
-    },
-    {
-      "start": "18:00",
-      "end": "21:45",
-      "host": "Nelson"
     }
   ],
   "courtOverrides": [],
@@ -555,6 +555,18 @@
       "checkedIn": true
     },
     {
+      "eventId": 2299671,
+      "title": "3.75-4.25 Open Play",
+      "startTime": "2026-10-09T17:30:00",
+      "endTime": "2026-10-09T19:30:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Rui H",
+      "checkedIn": false
+    },
+    {
       "eventId": 2298481,
       "title": "3.25+ Open Play",
       "startTime": "2026-10-09T17:30:00",
@@ -722,18 +734,6 @@
       ],
       "playerName": "Todd Z",
       "checkedIn": true
-    },
-    {
-      "eventId": 2118699,
-      "title": "3.5-4.0 Open Play",
-      "startTime": "2026-10-09T21:30:00",
-      "endTime": "2026-10-09T23:59:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 8"
-      ],
-      "playerName": "Steve C",
-      "checkedIn": false
     },
     {
       "eventId": 2299671,
@@ -1035,17 +1035,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2292581,
-      "title": "Advanced Beginners+ Open Play",
-      "startTime": "2026-10-09T19:30:00",
-      "endTime": "2026-10-09T21:30:00",
-      "courts": [
-        "Court 2"
-      ],
-      "playerName": "Macarthur A",
-      "checkedIn": false
-    },
-    {
       "eventId": 2199543,
       "title": "3.5-4.0 Gated Open Play ",
       "startTime": "2026-10-09T21:30:00",
@@ -1078,7 +1067,7 @@
         "Court 2"
       ],
       "playerName": "Earl B",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2199540,
@@ -1117,24 +1106,24 @@
       "checkedIn": false
     },
     {
-      "eventId": 2118699,
-      "title": "3.5-4.0 Open Play",
-      "startTime": "2026-10-09T21:30:00",
-      "endTime": "2026-10-09T23:59:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 8"
-      ],
-      "playerName": "Jordi F",
-      "checkedIn": false
-    },
-    {
       "eventId": 2118949,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-09T19:30:00",
       "endTime": "2026-10-09T21:30:00",
       "courts": [
         "Court 7 (Livestreaming)",
+        "Court 8"
+      ],
+      "playerName": "Jordi F",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2118699,
+      "title": "3.5-4.0 Open Play",
+      "startTime": "2026-10-09T21:30:00",
+      "endTime": "2026-10-09T23:59:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
         "Court 8"
       ],
       "playerName": "Jordi F",
@@ -1195,6 +1184,18 @@
       "endTime": "2026-10-09T21:30:00",
       "courts": [
         "Court 7 (Livestreaming)",
+        "Court 8"
+      ],
+      "playerName": "Steve C",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2118699,
+      "title": "3.5-4.0 Open Play",
+      "startTime": "2026-10-09T21:30:00",
+      "endTime": "2026-10-09T23:59:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
         "Court 8"
       ],
       "playerName": "Steve C",
@@ -1744,6 +1745,17 @@
       "checkedIn": false
     },
     {
+      "eventId": 2292581,
+      "title": "Advanced Beginners+ Open Play",
+      "startTime": "2026-10-09T19:30:00",
+      "endTime": "2026-10-09T21:30:00",
+      "courts": [
+        "Court 2"
+      ],
+      "playerName": "Macarthur A",
+      "checkedIn": false
+    },
+    {
       "eventId": 2182202,
       "title": "SUMMER | Intermediate - Advanced | Saturday",
       "startTime": "2026-10-10T13:00:00",
@@ -1892,6 +1904,17 @@
         "Court 11"
       ],
       "playerName": "Jin H",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2292581,
+      "title": "Advanced Beginners+ Open Play",
+      "startTime": "2026-10-09T19:30:00",
+      "endTime": "2026-10-09T21:30:00",
+      "courts": [
+        "Court 2"
+      ],
+      "playerName": "Nick L",
       "checkedIn": false
     },
     {
@@ -2975,7 +2998,7 @@
         "Court 2"
       ],
       "playerName": "Jhantelle B",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2303217,
