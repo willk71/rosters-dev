@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-10-10T22:38:47Z",
+  "lastUpdated": "2026-10-10T22:53:32Z",
   "date": "2026-10-10",
   "courtHosts": [
-    {
-      "start": "20:00",
-      "end": "02:00",
-      "host": "Nelson C"
-    },
-    {
-      "start": "09:00",
-      "end": "13:00",
-      "host": "Nelson C"
-    },
     {
       "start": "20:00",
       "end": "02:00",
@@ -21,6 +11,16 @@
       "start": "09:00",
       "end": "13:00",
       "host": "Lillian H"
+    },
+    {
+      "start": "20:00",
+      "end": "02:00",
+      "host": "Nelson C"
+    },
+    {
+      "start": "09:00",
+      "end": "13:00",
+      "host": "Nelson C"
     }
   ],
   "courtOverrides": [],
@@ -1654,6 +1654,21 @@
       "endTime": "2026-10-11T13:00:00",
       "courts": [
         "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Nikki M",
+      "checkedIn": true
+    },
+    {
+      "eventId": 2225541,
+      "title": "Open Play (Int-Adv)",
+      "startTime": "2026-10-11T13:00:00",
+      "endTime": "2026-10-11T15:00:00",
+      "courts": [
+        "Court 7 (Livestreaming)",
+        "Court 10 (Livestreaming)",
+        "Court 4 (Livestreaming)",
+        "Court 8",
+        "Court 12 (Livestreaming)"
       ],
       "playerName": "Nikki M",
       "checkedIn": true
