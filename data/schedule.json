@@ -1,16 +1,11 @@
 {
-  "lastUpdated": "2026-10-11T02:01:11Z",
+  "lastUpdated": "2026-10-11T02:02:04Z",
   "date": "2026-10-10",
   "courtHosts": [
     {
       "start": "20:00",
       "end": "02:00",
       "host": "Nelson C"
-    },
-    {
-      "start": "20:00",
-      "end": "02:00",
-      "host": "Wendy X"
     },
     {
       "start": "09:00",
@@ -21,6 +16,11 @@
       "start": "09:00",
       "end": "13:00",
       "host": "Nelson C"
+    },
+    {
+      "start": "20:00",
+      "end": "02:00",
+      "host": "Wendy X"
     }
   ],
   "courtOverrides": [],
@@ -592,7 +592,7 @@
         "Court 11"
       ],
       "playerName": "Sharon C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2182246,
@@ -2682,7 +2682,7 @@
         "Court 11"
       ],
       "playerName": "George C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2182246,
@@ -2697,7 +2697,7 @@
         "Court 11"
       ],
       "playerName": "Kevin C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2182246,
