@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-10-14T23:31:16Z",
+  "lastUpdated": "2026-10-14T23:50:28Z",
   "date": "2026-10-14",
   "courtHosts": [
+    {
+      "start": "18:00",
+      "end": "21:00",
+      "host": "Nelson C"
+    },
     {
       "start": "19:30",
       "end": "23:00",
       "host": "Stephanie L"
+    },
+    {
+      "start": "18:00",
+      "end": "21:30",
+      "host": "Harsh P"
     },
     {
       "start": "19:15",
@@ -16,16 +26,6 @@
       "start": "18:00",
       "end": "21:00",
       "host": "Wendy X"
-    },
-    {
-      "start": "18:00",
-      "end": "21:00",
-      "host": "Nelson C"
-    },
-    {
-      "start": "18:00",
-      "end": "21:30",
-      "host": "Harsh P"
     }
   ],
   "courtOverrides": [],
@@ -1125,7 +1125,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Sandi H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301950,
@@ -1190,7 +1190,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Ray C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2248616,
@@ -1338,7 +1338,7 @@
         "Court 3"
       ],
       "playerName": "Mike L",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301944,
@@ -1350,7 +1350,7 @@
         "Court 3"
       ],
       "playerName": "Valerie L",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301944,
@@ -1487,7 +1487,7 @@
         "Court 3"
       ],
       "playerName": "Will L",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301944,
@@ -1499,7 +1499,7 @@
         "Court 3"
       ],
       "playerName": "Abel T",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301947,
@@ -1512,7 +1512,7 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Thomas K",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2302616,
@@ -1525,7 +1525,7 @@
         "Court 5"
       ],
       "playerName": "Thomas K",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2302616,
@@ -1610,7 +1610,7 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Eric H",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301947,
@@ -1698,7 +1698,7 @@
         "Court 5"
       ],
       "playerName": "Zayd A",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2266510,
@@ -1712,7 +1712,7 @@
         "Court 8"
       ],
       "playerName": "Zayd A",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301963,
@@ -1817,7 +1817,7 @@
         "Court 5"
       ],
       "playerName": "Evan M",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301952,
@@ -2034,7 +2034,7 @@
         "Court 12 (Livestreaming)"
       ],
       "playerName": "GHULAM M",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301970,
@@ -2047,7 +2047,7 @@
         "Court 6"
       ],
       "playerName": "GHULAM M",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2302616,
@@ -2060,7 +2060,7 @@
         "Court 5"
       ],
       "playerName": "GHULAM M",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301952,
@@ -2524,20 +2524,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2301975,
-      "title": "3.5-4.0 Open Play | Play Until 1AM",
-      "startTime": "2026-10-15T22:00:00",
-      "endTime": "2026-10-15T23:59:00",
-      "courts": [
-        "Court 7 (Livestreaming)",
-        "Court 10 (Livestreaming)",
-        "Court 8",
-        "Court 4 (Livestreaming)"
-      ],
-      "playerName": "Jimmy Z",
-      "checkedIn": false
-    },
-    {
       "eventId": 2301970,
       "title": "3.25-3.75 Open Play",
       "startTime": "2026-10-15T20:00:00",
@@ -2616,7 +2602,7 @@
         "Court 5"
       ],
       "playerName": "David C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2266510,
@@ -2796,7 +2782,7 @@
         "Court 5"
       ],
       "playerName": "Jana P",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2266510,
@@ -2810,7 +2796,7 @@
         "Court 8"
       ],
       "playerName": "Jana P",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2302646,
@@ -2898,7 +2884,7 @@
         "Court 8"
       ],
       "playerName": "James F",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2302616,
@@ -2911,7 +2897,7 @@
         "Court 5"
       ],
       "playerName": "James F",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2301963,
@@ -3051,7 +3037,7 @@
         "Court 6"
       ],
       "playerName": "Will L",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2294628,
@@ -3063,6 +3049,18 @@
         "Court 1 (Livestreaming)"
       ],
       "playerName": "Will L",
+      "checkedIn": true
+    },
+    {
+      "eventId": 2301962,
+      "title": "3.25+ Open Play",
+      "startTime": "2026-10-15T18:00:00",
+      "endTime": "2026-10-15T20:00:00",
+      "courts": [
+        "Court 5",
+        "Court 3"
+      ],
+      "playerName": "Wilson L",
       "checkedIn": false
     },
     {
@@ -3420,6 +3418,20 @@
       "checkedIn": false
     },
     {
+      "eventId": 2301975,
+      "title": "3.5-4.0 Open Play | Play Until 1AM",
+      "startTime": "2026-10-15T22:00:00",
+      "endTime": "2026-10-15T23:59:00",
+      "courts": [
+        "Court 7 (Livestreaming)",
+        "Court 10 (Livestreaming)",
+        "Court 8",
+        "Court 4 (Livestreaming)"
+      ],
+      "playerName": "Jimmy Z",
+      "checkedIn": false
+    },
+    {
       "eventId": 2303258,
       "title": "3.5-4.0 Gated Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -3653,7 +3665,7 @@
         "Court 8"
       ],
       "playerName": "Neeraj P",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2162219,
