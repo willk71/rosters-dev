@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-10-15T14:45:46Z",
+  "lastUpdated": "2026-10-15T14:48:00Z",
   "date": "2026-10-15",
   "courtHosts": [
+    {
+      "start": "18:00",
+      "end": "21:00",
+      "host": "Wendy X"
+    },
     {
       "start": "18:00",
       "end": "21:00",
@@ -11,11 +16,6 @@
       "start": "19:30",
       "end": "23:00",
       "host": "Stephanie L"
-    },
-    {
-      "start": "18:00",
-      "end": "21:00",
-      "host": "Wendy X"
     }
   ],
   "courtOverrides": [],
@@ -2513,6 +2513,19 @@
       "checkedIn": false
     },
     {
+      "eventId": 2301967,
+      "title": "3.25-3.75 Gated Open Play",
+      "startTime": "2026-10-15T20:00:00",
+      "endTime": "2026-10-15T22:00:00",
+      "courts": [
+        "Court 3",
+        "Court 1 (Livestreaming)",
+        "Court 2"
+      ],
+      "playerName": "Beatrice F",
+      "checkedIn": false
+    },
+    {
       "eventId": 2301962,
       "title": "3.25+ Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -3302,6 +3315,18 @@
         "Court 11"
       ],
       "playerName": "Kevin Y",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2302030,
+      "title": "3.5-4.0 Open Play",
+      "startTime": "2026-10-16T19:30:00",
+      "endTime": "2026-10-16T21:30:00",
+      "courts": [
+        "Court 8",
+        "Court 10 (Livestreaming)"
+      ],
+      "playerName": "Mike L",
       "checkedIn": false
     }
   ]
