@@ -1,12 +1,7 @@
 {
-  "lastUpdated": "2026-10-15T15:20:58Z",
+  "lastUpdated": "2026-10-15T15:23:12Z",
   "date": "2026-10-15",
   "courtHosts": [
-    {
-      "start": "19:30",
-      "end": "23:00",
-      "host": "Stephanie L"
-    },
     {
       "start": "18:00",
       "end": "21:00",
@@ -16,6 +11,11 @@
       "start": "18:00",
       "end": "21:00",
       "host": "Wendy X"
+    },
+    {
+      "start": "19:30",
+      "end": "23:00",
+      "host": "Stephanie L"
     }
   ],
   "courtOverrides": [],
@@ -790,19 +790,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2301970,
-      "title": "3.25-3.75 Open Play",
-      "startTime": "2026-10-15T20:00:00",
-      "endTime": "2026-10-15T22:00:00",
-      "courts": [
-        "Court 5",
-        "Court 4 (Livestreaming)",
-        "Court 6"
-      ],
-      "playerName": "Al E",
-      "checkedIn": false
-    },
-    {
       "eventId": 2302024,
       "title": "3.25+ Open Play",
       "startTime": "2026-10-16T19:30:00",
@@ -813,6 +800,19 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Albee^^ L",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2301979,
+      "title": "Morning Espress-o Round Robin",
+      "startTime": "2026-10-16T07:00:00",
+      "endTime": "2026-10-16T09:00:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
+        "Court 8",
+        "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Jalen W",
       "checkedIn": false
     },
     {
@@ -1511,19 +1511,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2301979,
-      "title": "Morning Espress-o Round Robin",
-      "startTime": "2026-10-16T07:00:00",
-      "endTime": "2026-10-16T09:00:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 8",
-        "Court 7 (Livestreaming)"
-      ],
-      "playerName": "Jalen W",
-      "checkedIn": false
-    },
-    {
       "eventId": 2290385,
       "title": "Friday Night Challenge Court (High Int+)",
       "startTime": "2026-10-16T17:30:00",
@@ -1622,6 +1609,19 @@
       "checkedIn": false
     },
     {
+      "eventId": 2301979,
+      "title": "Morning Espress-o Round Robin",
+      "startTime": "2026-10-16T07:00:00",
+      "endTime": "2026-10-16T09:00:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
+        "Court 8",
+        "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Lily K",
+      "checkedIn": false
+    },
+    {
       "eventId": 2302724,
       "title": "3.5-4.0 Open Play | Play Until 1AM",
       "startTime": "2026-10-15T22:00:00",
@@ -1698,17 +1698,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2290385,
-      "title": "Friday Night Challenge Court (High Int+)",
-      "startTime": "2026-10-16T17:30:00",
-      "endTime": "2026-10-16T19:30:00",
-      "courts": [
-        "Court 12 (Livestreaming)"
-      ],
-      "playerName": "Will K",
-      "checkedIn": false
-    },
-    {
       "eventId": 2294628,
       "title": "Coached Open Play w/ Coach Martin (Int+)",
       "startTime": "2026-10-15T16:00:00",
@@ -1716,6 +1705,17 @@
       "courts": [
         "Court 4 (Livestreaming)",
         "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Will K",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2290385,
+      "title": "Friday Night Challenge Court (High Int+)",
+      "startTime": "2026-10-16T17:30:00",
+      "endTime": "2026-10-16T19:30:00",
+      "courts": [
+        "Court 12 (Livestreaming)"
       ],
       "playerName": "Will K",
       "checkedIn": false
@@ -1749,18 +1749,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2302030,
-      "title": "3.5-4.0 Open Play",
-      "startTime": "2026-10-16T19:30:00",
-      "endTime": "2026-10-16T21:30:00",
-      "courts": [
-        "Court 8",
-        "Court 10 (Livestreaming)"
-      ],
-      "playerName": "Emma V",
-      "checkedIn": false
-    },
-    {
       "eventId": 2301963,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -1783,6 +1771,18 @@
         "Court 7 (Livestreaming)",
         "Court 9",
         "Court 11"
+      ],
+      "playerName": "Emma V",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2302030,
+      "title": "3.5-4.0 Open Play",
+      "startTime": "2026-10-16T19:30:00",
+      "endTime": "2026-10-16T21:30:00",
+      "courts": [
+        "Court 8",
+        "Court 10 (Livestreaming)"
       ],
       "playerName": "Emma V",
       "checkedIn": false
@@ -2447,6 +2447,17 @@
       "checkedIn": false
     },
     {
+      "eventId": 2302748,
+      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
+      "startTime": "2026-10-16T21:30:00",
+      "endTime": "2026-10-16T23:59:00",
+      "courts": [
+        "Court 12 (Livestreaming)"
+      ],
+      "playerName": "Jana P",
+      "checkedIn": false
+    },
+    {
       "eventId": 2303258,
       "title": "3.5-4.0 Gated Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -2455,17 +2466,6 @@
         "Court 12 (Livestreaming)",
         "Court 10 (Livestreaming)",
         "Court 8"
-      ],
-      "playerName": "Jana P",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2302748,
-      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
-      "startTime": "2026-10-16T21:30:00",
-      "endTime": "2026-10-16T23:59:00",
-      "courts": [
-        "Court 12 (Livestreaming)"
       ],
       "playerName": "Jana P",
       "checkedIn": false
@@ -2538,17 +2538,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2302748,
-      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
-      "startTime": "2026-10-16T21:30:00",
-      "endTime": "2026-10-16T23:59:00",
-      "courts": [
-        "Court 12 (Livestreaming)"
-      ],
-      "playerName": "James F",
-      "checkedIn": false
-    },
-    {
       "eventId": 2303258,
       "title": "3.5-4.0 Gated Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -2557,6 +2546,17 @@
         "Court 12 (Livestreaming)",
         "Court 10 (Livestreaming)",
         "Court 8"
+      ],
+      "playerName": "James F",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2302748,
+      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
+      "startTime": "2026-10-16T21:30:00",
+      "endTime": "2026-10-16T23:59:00",
+      "courts": [
+        "Court 12 (Livestreaming)"
       ],
       "playerName": "James F",
       "checkedIn": false
@@ -2753,19 +2753,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2301979,
-      "title": "Morning Espress-o Round Robin",
-      "startTime": "2026-10-16T07:00:00",
-      "endTime": "2026-10-16T09:00:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 8",
-        "Court 7 (Livestreaming)"
-      ],
-      "playerName": "Lily K",
-      "checkedIn": false
-    },
-    {
       "eventId": 2303258,
       "title": "3.5-4.0 Gated Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -2868,19 +2855,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2301961,
-      "title": "Afternoon Open Play",
-      "startTime": "2026-10-15T16:00:00",
-      "endTime": "2026-10-15T18:00:00",
-      "courts": [
-        "Court 7 (Livestreaming)",
-        "Court 10 (Livestreaming)",
-        "Court 8"
-      ],
-      "playerName": "JP D",
-      "checkedIn": false
-    },
-    {
       "eventId": 2301962,
       "title": "3.25+ Open Play",
       "startTime": "2026-10-15T18:00:00",
@@ -2889,6 +2863,19 @@
         "Court 5",
         "Court 6",
         "Court 3"
+      ],
+      "playerName": "JP D",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2301961,
+      "title": "Afternoon Open Play",
+      "startTime": "2026-10-15T16:00:00",
+      "endTime": "2026-10-15T18:00:00",
+      "courts": [
+        "Court 7 (Livestreaming)",
+        "Court 10 (Livestreaming)",
+        "Court 8"
       ],
       "playerName": "JP D",
       "checkedIn": false
