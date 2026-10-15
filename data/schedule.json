@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-10-15T08:59:31Z",
+  "lastUpdated": "2026-10-15T09:01:45Z",
   "date": "2026-10-15",
   "courtHosts": [
+    {
+      "start": "19:30",
+      "end": "23:00",
+      "host": "Stephanie L"
+    },
     {
       "start": "18:00",
       "end": "21:00",
@@ -11,11 +16,6 @@
       "start": "18:00",
       "end": "21:00",
       "host": "Nelson C"
-    },
-    {
-      "start": "19:30",
-      "end": "23:00",
-      "host": "Stephanie L"
     }
   ],
   "courtOverrides": [],
@@ -2849,17 +2849,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2301964,
-      "title": "3.25-3.75 Open Play",
-      "startTime": "2026-10-15T18:00:00",
-      "endTime": "2026-10-15T20:00:00",
-      "courts": [
-        "Court 10 (Livestreaming)"
-      ],
-      "playerName": "John M",
-      "checkedIn": false
-    },
-    {
       "eventId": 2266510,
       "title": "3.75-4.25 Open Play",
       "startTime": "2026-10-15T20:00:00",
@@ -2905,15 +2894,14 @@
       "checkedIn": false
     },
     {
-      "eventId": 2184284,
-      "title": "Office Hours",
-      "startTime": "2026-10-16T09:00:00",
-      "endTime": "2026-10-16T11:00:00",
+      "eventId": 2301964,
+      "title": "3.25-3.75 Open Play",
+      "startTime": "2026-10-15T18:00:00",
+      "endTime": "2026-10-15T20:00:00",
       "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 12 (Livestreaming)"
+        "Court 10 (Livestreaming)"
       ],
-      "playerName": "Terence D",
+      "playerName": "John M",
       "checkedIn": false
     },
     {
@@ -2983,6 +2971,18 @@
         "Court 4 (Livestreaming)"
       ],
       "playerName": "Michael T",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2184284,
+      "title": "Office Hours",
+      "startTime": "2026-10-16T09:00:00",
+      "endTime": "2026-10-16T11:00:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
+        "Court 12 (Livestreaming)"
+      ],
+      "playerName": "Terence D",
       "checkedIn": false
     },
     {
