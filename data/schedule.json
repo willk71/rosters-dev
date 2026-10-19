@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-10-19T22:58:59Z",
+  "lastUpdated": "2026-10-19T23:01:14Z",
   "date": "2026-10-19",
   "courtHosts": [
-    {
-      "start": "17:00",
-      "end": "22:00",
-      "host": "Neil L"
-    },
     {
       "start": "18:00",
       "end": "21:00",
       "host": "Nelson C"
+    },
+    {
+      "start": "17:00",
+      "end": "22:00",
+      "host": "Neil L"
     }
   ],
   "courtOverrides": [],
@@ -33,12 +33,6 @@
       "holderLabel": "Daniel T.",
       "startTime": "2026-10-19T20:00:00",
       "endTime": "2026-10-19T21:00:00"
-    },
-    {
-      "court": "Court 3",
-      "holderLabel": "",
-      "startTime": "2026-10-19T21:00:00",
-      "endTime": "2026-10-19T23:00:00"
     },
     {
       "court": "Court 9",
@@ -2450,6 +2444,18 @@
       ],
       "playerName": "Haley K",
       "checkedIn": false
+    },
+    {
+      "eventId": 2257702,
+      "title": "3.25+ Open Play",
+      "startTime": "2026-10-20T20:00:00",
+      "endTime": "2026-10-20T22:00:00",
+      "courts": [
+        "Court 5",
+        "Court 3"
+      ],
+      "playerName": "Jack F",
+      "checkedIn": true
     },
     {
       "eventId": 2167909,
