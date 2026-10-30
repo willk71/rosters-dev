@@ -1,16 +1,11 @@
 {
-  "lastUpdated": "2026-10-30T21:24:02Z",
+  "lastUpdated": "2026-10-30T21:26:19Z",
   "date": "2026-10-30",
   "courtHosts": [
     {
       "start": "17:45",
       "end": "19:15",
       "host": "Wendy X"
-    },
-    {
-      "start": "19:00",
-      "end": "22:30",
-      "host": "Winnie Z"
     },
     {
       "start": "19:30",
@@ -20,7 +15,7 @@
     {
       "start": "19:00",
       "end": "22:00",
-      "host": "Sheila B"
+      "host": "Kirby E"
     },
     {
       "start": "17:45",
@@ -30,7 +25,12 @@
     {
       "start": "19:00",
       "end": "22:00",
-      "host": "Kirby E"
+      "host": "Sheila B"
+    },
+    {
+      "start": "19:00",
+      "end": "22:30",
+      "host": "Winnie Z"
     }
   ],
   "courtOverrides": [],
@@ -356,7 +356,7 @@
         "Court 2"
       ],
       "playerName": "Andrew C",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": "2301990_highint",
@@ -1111,6 +1111,19 @@
       "checkedIn": false
     },
     {
+      "eventId": 2337366,
+      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
+      "startTime": "2026-10-30T21:30:00",
+      "endTime": "2026-10-30T23:59:00",
+      "courts": [
+        "Court 12 (Livestreaming)",
+        "Court 11",
+        "Court 10 (Livestreaming)"
+      ],
+      "playerName": "Aria S",
+      "checkedIn": false
+    },
+    {
       "eventId": 2337852,
       "title": "3.5-4.0 Open Play",
       "startTime": "2026-10-31T09:00:00",
@@ -1343,19 +1356,6 @@
       ],
       "playerName": "Noel L",
       "checkedIn": false
-    },
-    {
-      "eventId": "2290261_highint",
-      "title": "Halloween Pickleball Party (Drink, Games, Prize!) | Family Friendly | Bring A Friend 50% OFF - High Intermediate",
-      "startTime": "2026-10-31T19:15:00",
-      "endTime": "2026-10-31T23:59:00",
-      "courts": [
-        "Court 13",
-        "Court 12 (Livestreaming)",
-        "Event Space"
-      ],
-      "playerName": "Johnpaul Z",
-      "checkedIn": true
     },
     {
       "eventId": 2337366,
@@ -1699,6 +1699,19 @@
       ],
       "playerName": "Jenny T",
       "checkedIn": false
+    },
+    {
+      "eventId": "2290261_highint",
+      "title": "Halloween Pickleball Party (Drink, Games, Prize!) | Family Friendly | Bring A Friend 50% OFF - High Intermediate",
+      "startTime": "2026-10-31T19:15:00",
+      "endTime": "2026-10-31T23:59:00",
+      "courts": [
+        "Court 13",
+        "Court 12 (Livestreaming)",
+        "Event Space"
+      ],
+      "playerName": "Johnpaul Z",
+      "checkedIn": true
     },
     {
       "eventId": 2343818,
