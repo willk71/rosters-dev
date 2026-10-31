@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-10-31T00:56:54Z",
+  "lastUpdated": "2026-10-31T00:59:10Z",
   "date": "2026-10-30",
   "courtHosts": [
-    {
-      "start": "19:00",
-      "end": "22:00",
-      "host": "Kirby E"
-    },
-    {
-      "start": "17:45",
-      "end": "19:15",
-      "host": "Nelson C"
-    },
     {
       "start": "19:00",
       "end": "22:30",
@@ -20,17 +10,27 @@
     {
       "start": "19:00",
       "end": "22:00",
-      "host": "Sheila B"
+      "host": "Kirby E"
     },
     {
-      "start": "19:30",
-      "end": "23:00",
-      "host": "Stephanie L"
+      "start": "19:00",
+      "end": "22:00",
+      "host": "Sheila B"
     },
     {
       "start": "17:45",
       "end": "19:15",
       "host": "Wendy X"
+    },
+    {
+      "start": "17:45",
+      "end": "19:15",
+      "host": "Nelson C"
+    },
+    {
+      "start": "19:30",
+      "end": "23:00",
+      "host": "Stephanie L"
     }
   ],
   "courtOverrides": [],
@@ -1018,7 +1018,7 @@
         "Court 8"
       ],
       "playerName": "Jacob S",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": 2302024,
@@ -1135,6 +1135,17 @@
         "Court 7 (Livestreaming)"
       ],
       "playerName": "Juan R",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2337344,
+      "title": "3.5-4.0 Open Play | Play Until 1AM",
+      "startTime": "2026-10-30T21:30:00",
+      "endTime": "2026-10-30T23:59:00",
+      "courts": [
+        "Court 8"
+      ],
+      "playerName": "Jeff L",
       "checkedIn": false
     },
     {
@@ -1507,19 +1518,6 @@
       ],
       "playerName": "Alex I",
       "checkedIn": false
-    },
-    {
-      "eventId": 2337852,
-      "title": "3.5-4.0 Open Play",
-      "startTime": "2026-10-31T09:00:00",
-      "endTime": "2026-10-31T11:00:00",
-      "courts": [
-        "Court 8",
-        "Court 10 (Livestreaming)",
-        "Court 7 (Livestreaming)"
-      ],
-      "playerName": "Jai W",
-      "checkedIn": true
     },
     {
       "eventId": 2337366,
@@ -2224,6 +2222,19 @@
       ],
       "playerName": "Jolie Z",
       "checkedIn": false
+    },
+    {
+      "eventId": 2337852,
+      "title": "3.5-4.0 Open Play",
+      "startTime": "2026-10-31T09:00:00",
+      "endTime": "2026-10-31T11:00:00",
+      "courts": [
+        "Court 8",
+        "Court 10 (Livestreaming)",
+        "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Jai W",
+      "checkedIn": true
     },
     {
       "eventId": "2290261_highint",
