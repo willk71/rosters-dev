@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-11-07T16:37:36Z",
+  "lastUpdated": "2026-11-07T16:39:51Z",
   "date": "2026-11-07",
   "courtHosts": [
-    {
-      "start": "15:45",
-      "end": "19:15",
-      "host": "Wendy X"
-    },
-    {
-      "start": "09:00",
-      "end": "12:00",
-      "host": "Nelson C"
-    },
     {
       "start": "15:45",
       "end": "19:15",
@@ -21,6 +11,16 @@
       "start": "09:00",
       "end": "12:00",
       "host": "Lillian H"
+    },
+    {
+      "start": "15:45",
+      "end": "19:15",
+      "host": "Wendy X"
+    },
+    {
+      "start": "09:00",
+      "end": "12:00",
+      "host": "Nelson C"
     }
   ],
   "courtOverrides": [],
@@ -1755,18 +1755,6 @@
       "checkedIn": false
     },
     {
-      "eventId": 2356614,
-      "title": "Open Play (AdvBeg-Int)",
-      "startTime": "2026-11-07T16:00:00",
-      "endTime": "2026-11-07T19:00:00",
-      "courts": [
-        "Court 2",
-        "Court 1 (Livestreaming)"
-      ],
-      "playerName": "Darren Y",
-      "checkedIn": false
-    },
-    {
       "eventId": "2353233_highint",
       "title": "Open Play - High Intermediate",
       "startTime": "2026-11-07T19:00:00",
@@ -1843,6 +1831,20 @@
         "Court 3"
       ],
       "playerName": "Valerie B",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2302783,
+      "title": "Open Play",
+      "startTime": "2026-11-07T13:00:00",
+      "endTime": "2026-11-07T16:00:00",
+      "courts": [
+        "Court 4 (Livestreaming)",
+        "Court 1 (Livestreaming)",
+        "Court 8",
+        "Court 5"
+      ],
+      "playerName": "Colin K",
       "checkedIn": false
     },
     {
@@ -2049,6 +2051,18 @@
         "Court 11"
       ],
       "playerName": "Brittany L",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2356614,
+      "title": "Open Play (AdvBeg-Int)",
+      "startTime": "2026-11-07T16:00:00",
+      "endTime": "2026-11-07T19:00:00",
+      "courts": [
+        "Court 2",
+        "Court 1 (Livestreaming)"
+      ],
+      "playerName": "Darren Y",
       "checkedIn": false
     },
     {
