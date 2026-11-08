@@ -1,12 +1,7 @@
 {
-  "lastUpdated": "2026-11-08T03:08:17Z",
+  "lastUpdated": "2026-11-08T03:10:34Z",
   "date": "2026-11-07",
   "courtHosts": [
-    {
-      "start": "15:45",
-      "end": "19:15",
-      "host": "Nelson C"
-    },
     {
       "start": "15:45",
       "end": "19:15",
@@ -15,11 +10,16 @@
     {
       "start": "09:00",
       "end": "12:00",
-      "host": "Lillian H"
+      "host": "Nelson C"
     },
     {
       "start": "09:00",
       "end": "12:00",
+      "host": "Lillian H"
+    },
+    {
+      "start": "15:45",
+      "end": "19:15",
       "host": "Nelson C"
     }
   ],
@@ -578,19 +578,6 @@
       "checkedIn": true
     },
     {
-      "eventId": "2302807_int",
-      "title": "Open Play - Intermediate",
-      "startTime": "2026-11-08T20:00:00",
-      "endTime": "2026-11-08T23:59:00",
-      "courts": [
-        "Court 7 (Livestreaming)",
-        "Court 8",
-        "Court 9"
-      ],
-      "playerName": "Kate S",
-      "checkedIn": false
-    },
-    {
       "eventId": "2302789_highint",
       "title": "Open Play - High Intermediate",
       "startTime": "2026-11-07T21:00:00",
@@ -619,22 +606,6 @@
       "checkedIn": true
     },
     {
-      "eventId": 2336765,
-      "title": "Open Play | Play til 1AM",
-      "startTime": "2026-11-09T21:30:00",
-      "endTime": "2026-11-09T23:59:00",
-      "courts": [
-        "Court 10 (Livestreaming)",
-        "Court 4 (Livestreaming)",
-        "Court 8",
-        "Court 6",
-        "Court 5",
-        "Court 7 (Livestreaming)"
-      ],
-      "playerName": "Jairo C",
-      "checkedIn": false
-    },
-    {
       "eventId": "2302789_highint",
       "title": "Open Play - High Intermediate",
       "startTime": "2026-11-07T21:00:00",
@@ -659,7 +630,7 @@
         "Court 7 (Livestreaming)"
       ],
       "playerName": "Waiho Z",
-      "checkedIn": false
+      "checkedIn": true
     },
     {
       "eventId": "2302789_int",
@@ -819,7 +790,7 @@
         "Court 8",
         "Court 9"
       ],
-      "playerName": "Brittany L",
+      "playerName": "Kate S",
       "checkedIn": false
     },
     {
@@ -2513,7 +2484,7 @@
         "Court 8",
         "Court 9"
       ],
-      "playerName": "Ben L",
+      "playerName": "Brittany L",
       "checkedIn": false
     },
     {
@@ -2638,6 +2609,22 @@
       ],
       "playerName": "Josh L",
       "checkedIn": true
+    },
+    {
+      "eventId": 2336765,
+      "title": "Open Play | Play til 1AM",
+      "startTime": "2026-11-09T21:30:00",
+      "endTime": "2026-11-09T23:59:00",
+      "courts": [
+        "Court 10 (Livestreaming)",
+        "Court 4 (Livestreaming)",
+        "Court 8",
+        "Court 6",
+        "Court 5",
+        "Court 7 (Livestreaming)"
+      ],
+      "playerName": "Jairo C",
+      "checkedIn": false
     },
     {
       "eventId": "2302789_int",
@@ -2818,6 +2805,19 @@
       ],
       "playerName": "derrek y",
       "checkedIn": true
+    },
+    {
+      "eventId": "2302807_int",
+      "title": "Open Play - Intermediate",
+      "startTime": "2026-11-08T20:00:00",
+      "endTime": "2026-11-08T23:59:00",
+      "courts": [
+        "Court 7 (Livestreaming)",
+        "Court 8",
+        "Court 9"
+      ],
+      "playerName": "Ben L",
+      "checkedIn": false
     },
     {
       "eventId": "2302789_advbeg",
