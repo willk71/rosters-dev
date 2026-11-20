@@ -1,7 +1,12 @@
 {
-  "lastUpdated": "2026-11-20T12:18:12Z",
+  "lastUpdated": "2026-11-20T12:20:26Z",
   "date": "2026-11-20",
   "courtHosts": [
+    {
+      "start": "19:00",
+      "end": "23:00",
+      "host": "Sheila B"
+    },
     {
       "start": "18:00",
       "end": "22:30",
@@ -11,11 +16,6 @@
       "start": "19:00",
       "end": "22:00",
       "host": "Winnie Z"
-    },
-    {
-      "start": "19:00",
-      "end": "23:00",
-      "host": "Sheila B"
     },
     {
       "start": "18:00",
@@ -1041,6 +1041,19 @@
       "checkedIn": false
     },
     {
+      "eventId": "2302014_int",
+      "title": "Open Play | Play Until 1AM - Intermediate",
+      "startTime": "2026-11-20T21:30:00",
+      "endTime": "2026-11-20T23:59:00",
+      "courts": [
+        "Court 7 (Livestreaming)",
+        "Court 8",
+        "Court 5"
+      ],
+      "playerName": "Abby F",
+      "checkedIn": false
+    },
+    {
       "eventId": 2302748,
       "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
       "startTime": "2026-11-20T21:30:00",
@@ -1176,17 +1189,6 @@
         "Court 10 (Livestreaming)"
       ],
       "playerName": "Steve L",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2302781,
-      "title": "4.0+ Open Play",
-      "startTime": "2026-11-21T11:00:00",
-      "endTime": "2026-11-21T13:00:00",
-      "courts": [
-        "Court 12 (Livestreaming)"
-      ],
-      "playerName": "Richard D",
       "checkedIn": false
     },
     {
@@ -1399,6 +1401,18 @@
       "checkedIn": false
     },
     {
+      "eventId": 2302748,
+      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
+      "startTime": "2026-11-20T21:30:00",
+      "endTime": "2026-11-20T23:59:00",
+      "courts": [
+        "Court 11",
+        "Court 12 (Livestreaming)"
+      ],
+      "playerName": "Toni T",
+      "checkedIn": false
+    },
+    {
       "eventId": 2199540,
       "title": "3.5-4.0 Gated Open Play",
       "startTime": "2026-11-20T19:30:00",
@@ -1407,18 +1421,6 @@
         "Court 12 (Livestreaming)",
         "Court 11",
         "Court 10 (Livestreaming)"
-      ],
-      "playerName": "Toni T",
-      "checkedIn": false
-    },
-    {
-      "eventId": 2302748,
-      "title": "3.5-4.0 Gated Open Play | Play Until 1AM",
-      "startTime": "2026-11-20T21:30:00",
-      "endTime": "2026-11-20T23:59:00",
-      "courts": [
-        "Court 11",
-        "Court 12 (Livestreaming)"
       ],
       "playerName": "Toni T",
       "checkedIn": false
@@ -1869,6 +1871,17 @@
         "Court 6"
       ],
       "playerName": "Steve L",
+      "checkedIn": false
+    },
+    {
+      "eventId": 2302781,
+      "title": "4.0+ Open Play",
+      "startTime": "2026-11-21T11:00:00",
+      "endTime": "2026-11-21T13:00:00",
+      "courts": [
+        "Court 12 (Livestreaming)"
+      ],
+      "playerName": "Richard D",
       "checkedIn": false
     },
     {
